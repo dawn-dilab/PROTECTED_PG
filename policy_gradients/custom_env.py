@@ -30,7 +30,7 @@ class Env:
             self.worker_idx = params['worker_idx']
             self.env_seed = params['seed']
             # 创建环境
-            self.env = make_env(game, worker_idx=1)
+            self.env = make_env(game, worker_idx=self.worker_idx)
             # self.env.seed(self.env_seed + 0 if self.worker_idx is None else self.worker_idx)
             self.env.seed(random.getrandbits(31))
         else:
@@ -114,7 +114,7 @@ class Env:
             idx = random.randint(0, 15)
         # Reset the state, and the running total reward
         if hasattr(self, 'worker_idx'):
-            start_state = self.env.reset(load_profile_idx=1)
+            start_state = self.env.reset(load_profile_idx=idx)
         else:
             start_state = self.env.reset()
         self.total_true_reward = 0.0
