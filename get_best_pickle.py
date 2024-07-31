@@ -43,6 +43,8 @@ def get_env_name(name):
         return '13Bus'
     elif '34Bus' in name:
         return '34Bus'
+    elif '123Bus' in name:
+        return '123Bus'
     return 'unknown'
 
 def main(args):

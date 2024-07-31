@@ -48,7 +48,7 @@
     "norm_states": false,
     "num_actors": 1,
     "num_minibatches": 32,
-    "out_dir": "/root/code/ATLA_robust_RL/atla_ppo_123Bus/agents",
+    "out_dir": "/root/code/PROTECTED_PG/protected_123Bus/agents",
     "policy_activation": "tanh",
     "policy_net_type": "CtsPolicy",
     "adv_policy_net_type": "CtsPolicy",
@@ -77,5 +77,12 @@
     "value_calc": "gae",
     "value_clipping": false,
     "value_multiplier": 0.1,
-    "value_net_type": "ValueNet"
+    "value_net_type": "ValueNet",
+    "cuda_id": 0,
+    "iteration": 3,
+    "ref_model_list": [],
+    "attack_multiple_victims": false,
+    "attack_exp3": false,
+    "load_env": "",
+    "results_log":""
 }
