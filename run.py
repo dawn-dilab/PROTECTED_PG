@@ -5,12 +5,13 @@ import numpy as np
 import os
 import argparse
 import traceback
-from policy_gradients import models
 import sys
 import json
 import torch
 from policy_gradients.store import Store, schema_from_dict
-
+from policy_gradients import models
+import warnings
+warnings.filterwarnings("ignore",category=DeprecationWarning)
 
 # Tee object allows for logging to both stdout and to file
 class Tee(object):
@@ -260,6 +261,8 @@ def add_common_parser_opts(parser):
     parser.add_argument('--log-every', type=int)
     parser.add_argument('--policy-net-type', type=str,
                         choices=models.POLICY_NETS.keys())
+    parser.add_argument('--adv-policy-net-type', type=str,
+                        choices=models.POLICY_NETS.keys())
     parser.add_argument('--value-net-type', type=str,
                         choices=models.VALUE_NETS.keys())
     parser.add_argument('--train-steps', type=int,
@@ -407,7 +410,7 @@ if __name__ == '__main__':
     parser.add_argument('--no-load-adv-policy', action='store_true', required=False, help='Do not load adversary policy and value network from pretrained model.')
     parser.add_argument('--adv-policy-only', action='store_true', required=False, help='Run adversary only, by setting main agent learning rate to 0')
     parser.add_argument('--deterministic', action='store_true', help='disable Gaussian noise in action for --adv-policy-only mode')
-    parser.add_argument('--seed', type=int, help='random seed', default=-1)
+    parser.add_argument('--seed', type=int, help='random seed', default=0)
     parser.add_argument('--iteration', type=int, help='number of iterations for our iterative methods')
     parser.add_argument('--ref-model-list', '--list', type=str, nargs='+')
     parser.add_argument('--attack-multiple-victims', action='store_true')
@@ -420,7 +423,8 @@ if __name__ == '__main__':
 
     params = vars(args)
     seed = params['seed']
-    json_params = json.load(open(args.config_path))
+    with open(args.config_path) as file:
+        json_params = json.load(file)
 
     extra_params = ['config_path', 'out_dir_prefix', 'load_model', 'no_load_adv_policy', 'adv_policy_only', 'deterministic', 'seed']
     params = override_json_params(params, json_params, extra_params)

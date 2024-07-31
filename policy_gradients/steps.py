@@ -570,9 +570,9 @@ def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones,
                     params.POLICY_ADAM.step()
         print(f'surrogate={surrogate.item():8.5f}, entropy={entropy_bonus.item():8.5f}, loss={loss.item():8.5f}')
 
-    std = ch.exp(net.log_stdev)
-    print(f'std_min={std.min().item():8.5f}, std_max={std.max().item():8.5f}, std_mean={std.mean().item():8.5f}')
-
+    if not net.discrete:
+        std = ch.exp(net.log_stdev)
+        print(f'std_min={std.min().item():8.5f}, std_max={std.max().item():8.5f}, std_mean={std.mean().item():8.5f}')
 
     return loss.item(), surrogate.item(), entropy.item()
 

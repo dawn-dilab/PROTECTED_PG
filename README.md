@@ -78,9 +78,6 @@ models/victims/hopper/model_0
 models/victims/hopper/model_0
 ```
 
-
-
-
 ## Evaluation under Various Attack Scenarios
 To evaluate the performance of non-dominated policies against no attacks or heurisitc attacks, random and RS (Zhang et al. 2020), use the following command
 ```

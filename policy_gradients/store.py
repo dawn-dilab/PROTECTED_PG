@@ -1,15 +1,18 @@
-import json
-
-import dill as pickle
 import pandas as pd
 import torch as ch
 import numpy as np
+import dill as pickle
 from uuid import uuid4
 from cox.utils import *
 import os
 import warnings
 from tensorboardX import SummaryWriter
-
+# current_dir = os.path.dirname(os.path.abspath(__file__))
+# parent_dir = os.path.dirname(os.path.dirname(current_dir))
+# parent_dir = os.path.dirname(parent_dir)
+# print(parent_dir)
+# import sys
+# sys.path.append(parent_dir)
 TABLE_OBJECT_DIR = '.table_objects'
 SAVE_DIR = 'save'
 STORE_BASENAME = 'store.h5'
@@ -31,46 +34,30 @@ class Store():
 
     Directly saves: int, float, torch scalar, string
     Saves and links: np.array, torch tensor, python object (via pickle or
-    pytorch serialization)
+        pytorch serialization)
 
     Note on python object serialization: you can choose one of three options to
-    serialize using: :attr:`~cox.store.Store.OBJECT` (store as python serialization inline), 
-    :attr:`~cox.store.Store.PICKLE`
-    (store as python serialization on disk), or
-    :attr:`~cox.store.Store.PYTORCH_STATE` (save as pytorch serialization on
-    disk). All these types are represented as properties, i.e.
-    ``store_instance.PYTORCH_STATE``. You will need to manually decode the objects
-    using the static methods found in the :class:`~cox.store.Table` class
-    (``get_pytorch_state``, ``get_object``, ``get_pickle``), or use a
-    :class:`cox.readers.CollectionReader` which will handle this for you.
+    serialize using: `OBJECT` (store as python serialization inline), `PICKLE`
+    (store as python serialization on disk), or `PYTORCH_STATE` (save as
+    pytorch serialization on disk). All these types are represented as
+    properties, i.e. `store_instance.PYTORCH_STATE`. You will need to manually
+    decode the objects using the static methods found in the `Table` class
+    (`get_pytorch_state`, `get_object`, `get_pickle`).
     '''
 
     OBJECT = OBJECT
-    '''
-    Python serialized datatype (saved as string in the h5 table---not
-    recommended for large objects as these objects must be loaded along with the
-    table)
-    '''
     PICKLE = PICKLE
-    '''
-    Pickle datatype (saved on disk and referenced from the table---recommended
-    for larger objects)
-    '''
     PYTORCH_STATE = PYTORCH_STATE
-    '''
-    PyTorch state, e.g. from model.state_dict() (saved on disk and linked)
-    '''
-
     def __init__(self, storage_folder, exp_id=None, new=False, mode='a'):
         '''
-        Make new experiment store in ``storage_folder``, within its subdirectory
-        ``exp_id`` (if not none). If an experiment exists already with this
+        Make new experiment store in `storage_folder`, within its subdirectory
+        `exp_id` (if not none). If an experiment exists already with this
         corresponding directory, open it for reading.
 
         Args:
             storage_folder (str) : parent folder in which we will put a folder
                 with all our experiment data (this store).
-            exp_id (str) : dir name in ``storage_folder`` under which we will
+            exp_id (str) : dir name in `storage_folder` under which we will
                 store experimental data.
             new (str): enforce that this store has never been created before.
             mode (str) : mode for accessing tables. a is append only, r is read
@@ -126,7 +113,7 @@ class Store():
 
     def get_table(self, table_id):
         '''
-        Gets table with key ``table_id``.
+        Gets table with key `table_id`.
 
         Args:
             table_id (str) : id of table to get from this store.
@@ -138,7 +125,7 @@ class Store():
 
     def __getitem__(self, table_id):
         '''
-        Gets table with key ``table_id``.
+        Gets table with key `table_id`.
 
         Args:
             table_id (str) : id of table to get from this store.
@@ -157,7 +144,7 @@ class Store():
             schema (dict) : a dict for the schema of the table. The entries
                 should be of the form name:type. For example, if we wanted to
                 add a float column in the table named acc, we would have an
-                entry ``'acc':float``.
+                entry `'acc':float`.
 
         Returns:
             The table object of the new table.
@@ -236,10 +223,9 @@ class Table():
 
         Args:
             name (str) : name of table
-            schema (dict) : schema of table (as described in
-                :class:`cox.store.Store` class)
+            schema (dict) : schema of table (as described in `store` class)
             table_obj_dir (str) : where to store serialized objects on disk
-                store (Store) : parent store.
+            store (Store) : parent store.
             has_initialized (bool) : has this table been created yet.
         '''
         self._name = name
@@ -289,10 +275,10 @@ class Table():
     def append_row(self, data):
         '''
         Write a dictionary with format column name:value as a row to the table.
-        Must have a value for each column. See :meth:`~cox.store.Store.update_row` for more mechanics.
+        Must have a value for each column. See `update_row` for more mechanics.
 
         Args:
-            data (dict) : dictionary with format ``column name``:``value``.
+            data (dict) : dictionary with format `column name`:`value`.
         '''
         self.update_row(data)
         self.flush_row()
@@ -306,27 +292,24 @@ class Table():
     def update_row(self, data):
         '''
         Update the currently considered row in the data store. Our database is
-        append only using the :class:`cox.store.Table` API. We can update this single row as much
-        as we desire, using column:value mappings in ``data``. Eventually, the
+        append only using the `Table` API. We can update this single row as much
+        as we desire, using column:value mappings in `data`. Eventually, the
         currently considered row must be written to the database using
-        :meth:`cox.store.Table.flush_row`. This model allows for writing rows easily when not all the
-        values are known in a single context. Each ``data`` object does not need
+        `flush_row`. This model allows for writing rows easily when not all the
+        values are known in a single context. Each `data` object does not need
         to contain every column, but by the time that the row is flushed every
         column must obtained a value. This update model is stateful.
 
-        Python primitives (``int``, ``float``, ``str``, ``bool``), and their numpy
+        Python primitives (`int`, `float`, `str`, `bool`), and their numpy
         equivalents are written automatically to the row. All other objects are
-        serialized (see :class:`~cox.store.Store`).
+        serialized (see `Store`).
 
         Args:
-            data (dict) : a dictionary with format ``column name``:``value``.
+            data (dict) : a dictionary with format `column name`:`value`.
         '''
         # Data sanity checks
         assert self._curr_row_data is not None
         assert len(set(data.keys())) == len(data.keys())
-
-        if not os.path.exists(self._table_obj_dir):
-            os.makedirs(self._table_obj_dir)
 
         if any([k not in self._schema for k in data]):
             raise ValueError("Got keys that are undeclared in schema")
@@ -336,12 +319,15 @@ class Table():
             if v_type == OBJECT:
                 to_store = obj_to_string(v)
             elif v_type == PICKLE or v_type == PYTORCH_STATE:
+                # if not os.path.exists(self._table_obj_dir):
+                #     os.makedirs(self._table_obj_dir)
+                #     print("创建")
                 uid = str(uuid4())
                 fname = os.path.join(self._table_obj_dir, uid)
                 if v_type == PICKLE:
-                    pass
                     # with open(fname, 'wb') as f:
                     #     pickle.dump(v, f)
+                    pass
                 else:
                     if 'state_dict' in dir(v):
                         v = v.state_dict()
@@ -391,8 +377,8 @@ class Table():
 
     def flush_row(self):
         '''
-        Writes the current row we have staged (using :meth:`~cox.store.Table.update_row`) to the table.
-        Another row is immediately staged for :meth:`~cox.store.Table.update_row` to act on.
+        Writes the current row we have staged (using `update_row`) to the table.
+        Another row is immediately staged for `update_row` to act on.
         '''
         self._curr_row_data = _clean_dict(self._curr_row_data, self._schema)
 

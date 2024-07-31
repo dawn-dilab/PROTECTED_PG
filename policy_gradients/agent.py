@@ -33,7 +33,7 @@ class Trainer():
     '''
 
     def __init__(self, policy_net_class, value_net_class, params,
-                 store, advanced_logging=True, log_every=5):
+                 store, adv_policy_net_class=None, advanced_logging=True, log_every=5):
         '''
         Initializes a new Trainer class.
         Inputs;
@@ -80,6 +80,7 @@ class Trainer():
         self.n_steps = 0
         self.log_every = log_every
         self.policy_net_class = policy_net_class
+        self.adv_policy_net_class = adv_policy_net_class
         self.value_net_class = value_net_class
 
         # Instantiation
@@ -112,13 +113,13 @@ class Trainer():
 
             if self.MODE == 'adv_pa_ppo':
                 # The adversary policy has features as input, action perturbation as output.
-                self.adversary_policy_model = policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
+                self.adversary_policy_model = adv_policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
                                                                self.INITIALIZATION,
                                                                time_in_state=time_in_state,
                                                                activation=ch.nn.Tanh)
             else:
                 # The adversary policy has features as input, features as output.
-                self.adversary_policy_model = policy_net_class(self.NUM_FEATURES, self.NUM_FEATURES,
+                self.adversary_policy_model = adv_policy_net_class(self.NUM_FEATURES, self.NUM_FEATURES,
                                                                self.INITIALIZATION,
                                                                time_in_state=time_in_state,
                                                                activation=self.policy_activation)
@@ -137,7 +138,7 @@ class Trainer():
 
             self.adversary_val_opt = optim.Adam(self.adversary_val_model.parameters(), lr=self.ADV_VAL_LR, eps=1e-5)
             self.adversary_val_opt2 = optim.Adam(self.adversary_val_model2.parameters(), lr=self.ADV_VAL_LR, eps=1e-5)
-            assert self.adversary_policy_model.discrete == (self.AGENT_TYPE == "discrete")
+            # assert self.adversary_policy_model.discrete == (self.AGENT_TYPE == "discrete")
 
             # Learning rate annealling for adversary.
             if self.ANNEAL_LR:
@@ -177,7 +178,7 @@ class Trainer():
             self.val_model = self.val_model.to("cuda:{}".format(self.params.CUDA_ID))
 
         self.val_opt = optim.Adam(self.val_model.parameters(), lr=self.VAL_LR, eps=1e-5)
-        assert self.policy_model.discrete == (self.AGENT_TYPE == "discrete")
+        # assert self.policy_model.discrete == (self.AGENT_TYPE == "discrete")
 
         # Learning rate annealing
         # From OpenAI hyperparametrs:
@@ -502,12 +503,14 @@ class Trainer():
             if self.MODE == "adv_pa_ppo":
                 # For the pa adversary, action is a action perturbation.
                 actions_shape = shape + (self.NUM_ACTIONS,)
+                actions = ch.zeros(actions_shape)
             else:
                 # For the adversary, action is a state perturbation.
                 actions_shape = shape + (self.NUM_FEATURES,)
+                actions = ch.zeros(actions_shape)
         else:
             actions_shape = shape + (self.NUM_ACTIONS,)
-        actions = ch.zeros(actions_shape)
+            actions = ch.zeros(shape + (1,)) if self.policy_model.discrete else ch.zeros(actions_shape)
         # Mean of the action distribution. Used for avoid unnecessary recomputation.
         action_means = ch.zeros(actions_shape)
         # Log Std of the action distribution.
@@ -551,7 +554,10 @@ class Trainer():
                     if self.MODE == "adv_pa_ppo":
                         # Only attack a portion of steps.
                         adv_perturbation_pds = self.adversary_policy_model(last_states)
-                        next_adv_perturbation_means, next_adv_perturbation_stds = adv_perturbation_pds
+                        if not self.adversary_policy_model.discrete:
+                            next_adv_perturbation_means, next_adv_perturbation_stds = adv_perturbation_pds
+                        else:
+                            next_adv_perturbation_means = adv_perturbation_pds
                         # sample from the density.
                         next_adv_perturbations = self.adversary_policy_model.sample(adv_perturbation_pds)
                         # get log likelyhood for this perturbation.
@@ -565,7 +571,10 @@ class Trainer():
                     else:
                         # Only attack a portion of steps.
                         adv_perturbation_pds = self.adversary_policy_model(last_states)
-                        next_adv_perturbation_means, next_adv_perturbation_stds = adv_perturbation_pds
+                        if not self.adversary_policy_model.discrete:
+                            next_adv_perturbation_means, next_adv_perturbation_stds = adv_perturbation_pds
+                        else:
+                            next_adv_perturbation_means = adv_perturbation_pds
                         # sample from the density.
                         next_adv_perturbations = self.adversary_policy_model.sample(adv_perturbation_pds)
                         # get log likelyhood for this perturbation.
@@ -594,7 +603,10 @@ class Trainer():
             self.policy_model.continue_history()
             self.val_model.continue_history()
             action_pds = self.policy_model(last_states)
-            next_action_means, next_action_stds = action_pds
+            if not self.policy_model.discrete:
+                next_action_means, next_action_stds = action_pds
+            else:
+                next_action_means = action_pds
             next_actions = self.policy_model.sample(action_pds)
             next_action_log_probs = self.policy_model.get_loglikelihood(action_pds, next_actions)
 
@@ -608,7 +620,6 @@ class Trainer():
             #     assert shape_equal([self.NUM_ACTORS, 1], next_actions)
             # else:
             #     assert shape_equal([self.NUM_ACTORS, 1, self.policy_model.action_dim])
-
 
             ret = self.multi_actor_step(next_actions, envs)
 
@@ -714,7 +725,7 @@ class Trainer():
         states = states[:, :-1, :]
         trajs = Trajectories(rewards=rewards,
                              action_log_probs=action_log_probs, not_dones=not_dones,
-                             actions=actions, states=states, action_means=action_means, action_std=next_action_stds)
+                             actions=actions, states=states, action_means=action_means, action_std= 0 if self.policy_model.discrete else next_action_stds)
 
         to_ret = (avg_episode_length, avg_episode_reward, trajs)
         if return_rewards:
@@ -903,7 +914,7 @@ class Trainer():
             # Attack using a learned policy network.
             assert self.params.ATTACK_ADVPOLICY_NETWORK is not None
             if not hasattr(self, "attack_policy_network"):
-                self.attack_policy_network = self.policy_net_class(self.NUM_FEATURES, self.NUM_FEATURES,
+                self.attack_policy_network = self.adv_policy_net_class(self.NUM_FEATURES, self.NUM_FEATURES,
                                                                    self.INITIALIZATION,
                                                                    time_in_state=self.VALUE_CALC == "time",
                                                                    activation=self.policy_activation)
@@ -925,7 +936,7 @@ class Trainer():
             # Attack using a learned policy network.
             assert self.params.ATTACK_ADVPOLICY_NETWORK is not None
             if not hasattr(self, "attack_policy_network"):
-                self.attack_policy_network = self.policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
+                self.attack_policy_network = self.adv_policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
                                                                    self.INITIALIZATION,
                                                                    time_in_state=self.VALUE_CALC == "time",
                                                                    activation=self.policy_activation)
@@ -1469,7 +1480,10 @@ class Trainer():
             if hasattr(self, "imit_network"):
                 _ = self.imit_network(maybe_attacked_last_states)
 
-            next_action_means, next_action_stds = action_pds
+            if not self.policy_model.discrete:
+                next_action_means, next_action_stds = action_pds
+            else:
+                next_action_means = action_pds
             # Double check if the attack is within eps range.
             if self.params.ATTACK_METHOD != "none":
                 max_eps = (maybe_attacked_last_states - last_states).abs().max()
@@ -1622,12 +1636,14 @@ class Trainer():
         '''
         if params['history_length'] > 0:
             agent_policy = CtsLSTMPolicy
+            adv_agent_policy = CtsLSTMPolicy
             if params['use_lstm_val']:
                 agent_value = ValueLSTMNet
             else:
                 agent_value = value_net_with_name(params['value_net_type'])
         else:
             agent_policy = policy_net_with_name(params['policy_net_type'])
+            adv_agent_policy = policy_net_with_name(params['adv_policy_net_type'])
             agent_value = value_net_with_name(params['value_net_type'])
 
         advanced_logging = params['advanced_logging'] and store is not None
@@ -1635,8 +1651,8 @@ class Trainer():
 
         if params['cpu']:
             torch.set_num_threads(1)
-        p = Trainer(agent_policy, agent_value, params, store, log_every=log_every,
-                    advanced_logging=advanced_logging)
+        p = Trainer(agent_policy, agent_value, params, store, adv_policy_net_class=adv_agent_policy,
+                    log_every=log_every, advanced_logging=advanced_logging)
 
         return p
 
@@ -1657,17 +1673,18 @@ class Trainer():
 
         # Instantiate convex relaxation model when mode is 'robust_ppo'
         # TODO: double check
-        self.create_relaxed_model(self.time_in_state)
+        if not self.policy_model.discrete:
+            self.create_relaxed_model(self.time_in_state)
 
         if self.MODE == 'adv_pa_ppo':
             # The adversary policy has features as input, action perturbation as output.
-            self.adversary_policy_model = self.policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
+            self.adversary_policy_model = self.adv_policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
                                                                 self.INITIALIZATION,
                                                                 time_in_state=self.time_in_state,
                                                                 activation=ch.nn.Tanh)
         else:
             # The adversary policy has features as input, features as output.
-            self.adversary_policy_model = self.policy_net_class(self.NUM_FEATURES, self.NUM_FEATURES,
+            self.adversary_policy_model = self.adv_policy_net_class(self.NUM_FEATURES, self.NUM_FEATURES,
                                                                 self.INITIALIZATION,
                                                                 time_in_state=self.time_in_state,
                                                                 activation=self.policy_activation)
@@ -1771,7 +1788,7 @@ class Trainer():
     def merge_saps(self, saps1, saps2):
         # TODO: double check
         for attr in list(saps2.__dict__.keys()):
-            if attr == "unrolled":
+            if attr == "unrolled" or (self.policy_model.discrete and attr == "action_std"):
                 continue
             if attr in ['rewards', 'returns', 'advantages']:
                 saps1.__dict__[attr] = torch.cat([-saps1.__dict__[attr], saps2.__dict__[attr]])

@@ -35,6 +35,14 @@ def get_env_name(name):
         return 'hopper'
     elif 'walker' in name:
         return 'walker'
+    elif 'cartpole' in name:
+        return 'cartpole'
+    elif 'pendulum' in name:
+        return 'pendulum'
+    elif '13Bus' in name:
+        return '13Bus'
+    elif '34Bus' in name:
+        return '34Bus'
     return 'unknown'
 
 def main(args):
@@ -83,7 +91,7 @@ def main(args):
             table_name_list = [key for key in store.keys if 'checkpoints' in key]
             print(f'Warning: final_results table not found for expid {best_exp_id}, using last checkpoints')
             #TODO: double check this
-            index_id = -1
+            index_id = -1  # 23
             # ckpts = store[table_name]
             ckpts = [store[table_name] for table_name in table_name_list]
             # print('loading from exp id:', best_exp_id, ' reward: ', ckpts.df['5_rewards'].iloc[index_id] if '5_rewards' in ckpts.df else "training not finished")
@@ -95,7 +103,7 @@ def main(args):
                     if name in sel_ckpts.df:
                         print(f'Saving {name} out of {len(sel_ckpts.df[name])}')
                         P[name] = sel_ckpts.get_state_dict(sel_ckpts.df[name].iloc[sel_index_id])
-                P['envs'] = sel_ckpts.get_pickle(sel_ckpts.df['envs'].iloc[sel_index_id])
+                # P['envs'] = sel_ckpts.get_pickle(sel_ckpts.df['envs'].iloc[sel_index_id])
                 
                 ch.save(P, sel_path)
                 print('\n', sel_path, 'saved.\n')
