@@ -201,7 +201,7 @@ def main(params):
                 p.start_new_iteration()
             for i in range(params['train_steps']):
                 print(f'Iteration {j}, step {i}')
-                if params['save_iters'] > 0 and i % params['save_iters'] == 1 and i != 0:
+                if params['save_iters'] > 0 and i % params['save_iters'] == 0 and i != 0:
                     final_5_rewards = np.array(rewards)[-5:].mean()
                     print(f'Saving checkpoints to {store.path} with reward {final_5_rewards:.5g}')
                     checkpoint_dict = {
