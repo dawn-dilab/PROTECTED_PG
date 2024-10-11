@@ -1,0 +1,987 @@
+Iteration 0, step 4
+++++++++ Policy training ++++++++++
+Current mean reward: -4031.152523 | mean episode length: 24.000000
+val_loss=2383979.25000
+val_loss=2645833.75000
+val_loss=2107057.00000
+val_loss=2462781.00000
+val_loss=2526190.50000
+val_loss=2288318.00000
+val_loss=2428198.00000
+val_loss=2197384.25000
+val_loss=2177032.00000
+val_loss=2122377.00000
+surrogate= 0.02276, entropy=45.58517, loss=-0.43309
+surrogate=-0.02060, entropy=45.59195, loss=-0.47652
+surrogate=-0.03015, entropy=45.59973, loss=-0.48615
+surrogate=-0.00717, entropy=45.60065, loss=-0.46318
+surrogate=-0.00255, entropy=45.60770, loss=-0.45863
+surrogate=-0.00399, entropy=45.61735, loss=-0.46017
+surrogate=-0.01036, entropy=45.61405, loss=-0.46650
+surrogate=-0.00018, entropy=45.62076, loss=-0.45639
+surrogate=-0.04170, entropy=45.62341, loss=-0.49793
+surrogate= 0.00323, entropy=45.62543, loss=-0.45303
+std_min= 0.93878, std_max= 1.07034, std_mean= 1.00727
+val lr: [0.00023529411764705883], policy lr: [0.00028235294117647056]
+Traning Time elapsed (s): 1.9504013061523438
+Policy Loss: -0.45303, | Entropy Bonus: -0.45625, | Value Loss: 2.1224e+06
+Time elapsed (s): 313.735636472702
+Agent stdevs: 1.0072699
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3992.982170 | mean episode length: 24.000000
+val_loss=2466498.75000
+val_loss=2324849.50000
+val_loss=2348248.25000
+val_loss=2320517.25000
+val_loss=2612311.50000
+val_loss=2393265.25000
+val_loss=2340375.00000
+val_loss=2257555.00000
+val_loss=2457069.75000
+val_loss=2562004.50000
+surrogate= 0.34008, entropy=12198.64160, loss= 0.34008
+surrogate= 0.34431, entropy=12198.69922, loss= 0.34431
+surrogate= 0.32064, entropy=12198.70117, loss= 0.32064
+surrogate= 0.31686, entropy=12198.70117, loss= 0.31686
+surrogate= 0.34382, entropy=12198.70117, loss= 0.34382
+surrogate= 0.31665, entropy=12198.70117, loss= 0.31665
+surrogate= 0.34043, entropy=12198.70117, loss= 0.34043
+surrogate= 0.32677, entropy=12198.70117, loss= 0.32677
+surrogate= 0.34327, entropy=12198.70117, loss= 0.34327
+surrogate= 0.30210, entropy=12198.70117, loss= 0.30210
+std_min= 0.80511, std_max= 1.26717, std_mean= 1.00683
+val lr: [2.823529411764706e-05], policy lr: [0.002823529411764706]
+Traning Time elapsed (s): 1.5779941082000732
+Policy Loss: 0.3021, | Entropy Bonus: -0, | Value Loss: 2.562e+06
+Time elapsed (s): 309.3029456138611
+Agent stdevs: 1.0068265
+--------------------------------------------------------------------------------
+
+Iteration 0, step 5
+++++++++ Policy training ++++++++++
+Current mean reward: -3991.983133 | mean episode length: 24.000000
+val_loss=2363526.75000
+val_loss=2467878.50000
+val_loss=2075631.37500
+val_loss=2328606.50000
+val_loss=2297027.00000
+val_loss=2279927.50000
+val_loss=1971263.62500
+val_loss=2142358.50000
+val_loss=2404273.75000
+val_loss=2042082.37500
+surrogate=-0.00705, entropy=45.63102, loss=-0.46336
+surrogate=-0.01691, entropy=45.63615, loss=-0.47327
+surrogate= 0.01324, entropy=45.63947, loss=-0.44315
+surrogate= 0.01479, entropy=45.64697, loss=-0.44168
+surrogate=-0.00557, entropy=45.64489, loss=-0.46202
+surrogate=-0.01371, entropy=45.64477, loss=-0.47016
+surrogate=-0.00242, entropy=45.64650, loss=-0.45888
+surrogate=-0.00109, entropy=45.64386, loss=-0.45753
+surrogate= 0.00621, entropy=45.64494, loss=-0.45024
+surrogate=-0.00646, entropy=45.64761, loss=-0.46294
+std_min= 0.91743, std_max= 1.06904, std_mean= 1.00818
+val lr: [0.0002323529411764706], policy lr: [0.0002788235294117647]
+Traning Time elapsed (s): 1.9302141666412354
+Policy Loss: -0.46294, | Entropy Bonus: -0.45648, | Value Loss: 2.0421e+06
+Time elapsed (s): 295.6244819164276
+Agent stdevs: 1.0081842
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3962.381150 | mean episode length: 24.000000
+val_loss=2253994.00000
+val_loss=2375829.50000
+val_loss=2294015.00000
+val_loss=2198652.25000
+val_loss=2512547.50000
+val_loss=2475559.00000
+val_loss=2261309.00000
+val_loss=2477862.25000
+val_loss=2108146.75000
+val_loss=2281943.00000
+surrogate= 0.34782, entropy=12201.64648, loss= 0.34782
+surrogate= 0.32888, entropy=12201.76172, loss= 0.32888
+surrogate= 0.32763, entropy=12201.76562, loss= 0.32763
+surrogate= 0.31304, entropy=12201.76562, loss= 0.31304
+surrogate= 0.31433, entropy=12201.76562, loss= 0.31433
+surrogate= 0.32067, entropy=12201.76562, loss= 0.32067
+surrogate= 0.34925, entropy=12201.76562, loss= 0.34925
+surrogate= 0.35087, entropy=12201.76562, loss= 0.35087
+surrogate= 0.34501, entropy=12201.76562, loss= 0.34501
+surrogate= 0.33391, entropy=12201.76562, loss= 0.33391
+std_min= 0.74918, std_max= 1.29743, std_mean= 1.00803
+val lr: [2.7882352941176473e-05], policy lr: [0.0027882352941176474]
+Traning Time elapsed (s): 1.9478912353515625
+Policy Loss: 0.33391, | Entropy Bonus: -0, | Value Loss: 2.2819e+06
+Time elapsed (s): 298.6672751903534
+Agent stdevs: 1.0080285
+--------------------------------------------------------------------------------
+
+Iteration 0, step 6
+++++++++ Policy training ++++++++++
+Current mean reward: -3967.792774 | mean episode length: 24.000000
+val_loss=2169419.00000
+val_loss=2227007.50000
+val_loss=2188131.00000
+val_loss=2559059.75000
+val_loss=2482924.00000
+val_loss=2647095.25000
+val_loss=2552786.50000
+val_loss=2154277.00000
+val_loss=2178560.00000
+val_loss=2072591.25000
+surrogate=-0.00687, entropy=45.63539, loss=-0.46323
+surrogate=-0.02830, entropy=45.61531, loss=-0.48446
+surrogate=-0.02193, entropy=45.59663, loss=-0.47790
+surrogate=-0.02444, entropy=45.58130, loss=-0.48025
+surrogate=-0.00682, entropy=45.56978, loss=-0.46252
+surrogate= 0.01886, entropy=45.55289, loss=-0.43667
+surrogate=-0.00324, entropy=45.54313, loss=-0.45867
+surrogate=-0.01659, entropy=45.53478, loss=-0.47194
+surrogate=-0.00418, entropy=45.53178, loss=-0.45949
+surrogate=-0.02390, entropy=45.52127, loss=-0.47912
+std_min= 0.91203, std_max= 1.07882, std_mean= 1.00430
+val lr: [0.00022941176470588236], policy lr: [0.0002752941176470588]
+Traning Time elapsed (s): 1.37109375
+Policy Loss: -0.47912, | Entropy Bonus: -0.45521, | Value Loss: 2.0726e+06
+Time elapsed (s): 294.7137882709503
+Agent stdevs: 1.0043013
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3953.270738 | mean episode length: 24.000000
+val_loss=2445314.75000
+val_loss=2532285.75000
+val_loss=2509952.75000
+val_loss=2359194.50000
+val_loss=2214899.00000
+val_loss=1877526.37500
+val_loss=2527418.00000
+val_loss=2070843.75000
+val_loss=2137374.50000
+val_loss=2091880.00000
+surrogate= 0.33253, entropy=12207.21582, loss= 0.33253
+surrogate= 0.33488, entropy=12207.42871, loss= 0.33488
+surrogate= 0.34317, entropy=12207.43555, loss= 0.34317
+surrogate= 0.32402, entropy=12207.43555, loss= 0.32402
+surrogate= 0.33126, entropy=12207.43555, loss= 0.33126
+surrogate= 0.33401, entropy=12207.43555, loss= 0.33401
+surrogate= 0.33092, entropy=12207.43555, loss= 0.33092
+surrogate= 0.34572, entropy=12207.43555, loss= 0.34572
+surrogate= 0.33595, entropy=12207.43555, loss= 0.33595
+surrogate= 0.31913, entropy=12207.43555, loss= 0.31913
+std_min= 0.74541, std_max= 1.33580, std_mean= 1.00948
+val lr: [2.7529411764705883e-05], policy lr: [0.002752941176470588]
+Traning Time elapsed (s): 2.104130744934082
+Policy Loss: 0.31913, | Entropy Bonus: -0, | Value Loss: 2.0919e+06
+Time elapsed (s): 302.399005651474
+Agent stdevs: 1.0094786
+--------------------------------------------------------------------------------
+
+Iteration 0, step 7
+++++++++ Policy training ++++++++++
+Current mean reward: -3942.098034 | mean episode length: 24.000000
+val_loss=2325886.75000
+val_loss=2393722.00000
+val_loss=2142207.75000
+val_loss=2060134.12500
+val_loss=2111777.75000
+val_loss=2469074.00000
+val_loss=2517120.50000
+val_loss=2262551.50000
+val_loss=2325008.50000
+val_loss=2257964.25000
+surrogate=-0.00023, entropy=45.53455, loss=-0.45557
+surrogate= 0.01166, entropy=45.54311, loss=-0.44377
+surrogate=-0.00725, entropy=45.55619, loss=-0.46281
+surrogate=-0.00463, entropy=45.56688, loss=-0.46030
+surrogate=-0.01912, entropy=45.57491, loss=-0.47487
+surrogate=-0.01259, entropy=45.58446, loss=-0.46844
+surrogate= 0.00158, entropy=45.58896, loss=-0.45431
+surrogate=-0.01189, entropy=45.60042, loss=-0.46790
+surrogate=-0.00499, entropy=45.60428, loss=-0.46103
+surrogate=-0.03346, entropy=45.61347, loss=-0.48960
+std_min= 0.90711, std_max= 1.09914, std_mean= 1.00740
+val lr: [0.00022647058823529412], policy lr: [0.0002717647058823529]
+Traning Time elapsed (s): 1.9094033241271973
+Policy Loss: -0.4896, | Entropy Bonus: -0.45613, | Value Loss: 2.258e+06
+Time elapsed (s): 310.81787729263306
+Agent stdevs: 1.0073991
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3873.072000 | mean episode length: 24.000000
+val_loss=1898784.25000
+val_loss=2101946.50000
+val_loss=2008296.12500
+val_loss=2094102.75000
+val_loss=2143915.50000
+val_loss=2176912.50000
+val_loss=2410580.50000
+val_loss=2319509.50000
+val_loss=2139399.75000
+val_loss=2221154.00000
+surrogate= 0.32621, entropy=12216.06348, loss= 0.32621
+surrogate= 0.33614, entropy=12216.39941, loss= 0.33614
+surrogate= 0.33219, entropy=12216.41113, loss= 0.33219
+surrogate= 0.34931, entropy=12216.41211, loss= 0.34931
+surrogate= 0.33268, entropy=12216.41211, loss= 0.33268
+surrogate= 0.32585, entropy=12216.41211, loss= 0.32585
+surrogate= 0.33930, entropy=12216.41211, loss= 0.33930
+surrogate= 0.32657, entropy=12216.41211, loss= 0.32657
+surrogate= 0.32726, entropy=12216.41211, loss= 0.32726
+surrogate= 0.33942, entropy=12216.41211, loss= 0.33942
+std_min= 0.69877, std_max= 1.36977, std_mean= 1.01135
+val lr: [2.7176470588235296e-05], policy lr: [0.0027176470588235295]
+Traning Time elapsed (s): 1.5395474433898926
+Policy Loss: 0.33942, | Entropy Bonus: -0, | Value Loss: 2.2212e+06
+Time elapsed (s): 304.2290229797363
+Agent stdevs: 1.0113515
+--------------------------------------------------------------------------------
+
+Iteration 0, step 8
+++++++++ Policy training ++++++++++
+Current mean reward: -3963.745320 | mean episode length: 24.000000
+val_loss=2005031.00000
+val_loss=2446504.75000
+val_loss=2201129.00000
+val_loss=2563278.00000
+val_loss=2704168.25000
+val_loss=2278211.75000
+val_loss=2604994.50000
+val_loss=2514873.75000
+val_loss=2272007.00000
+val_loss=2447779.75000
+surrogate=-0.00568, entropy=45.61944, loss=-0.46188
+surrogate=-0.00978, entropy=45.62468, loss=-0.46603
+surrogate=-0.02112, entropy=45.62837, loss=-0.47741
+surrogate=-0.01142, entropy=45.63697, loss=-0.46779
+surrogate= 0.00187, entropy=45.64140, loss=-0.45455
+surrogate= 0.01865, entropy=45.64140, loss=-0.43777
+surrogate= 0.00218, entropy=45.63570, loss=-0.45418
+surrogate=-0.02966, entropy=45.63755, loss=-0.48603
+surrogate=-0.01410, entropy=45.64455, loss=-0.47054
+surrogate=-0.00394, entropy=45.64035, loss=-0.46034
+std_min= 0.89878, std_max= 1.11054, std_mean= 1.00840
+val lr: [0.0002235294117647059], policy lr: [0.00026823529411764704]
+Traning Time elapsed (s): 1.821516513824463
+Policy Loss: -0.46034, | Entropy Bonus: -0.4564, | Value Loss: 2.4478e+06
+Time elapsed (s): 297.2692651748657
+Agent stdevs: 1.0084001
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3951.795826 | mean episode length: 24.000000
+val_loss=2198100.00000
+val_loss=1998535.25000
+val_loss=2181147.75000
+val_loss=2042734.62500
+val_loss=2109198.00000
+val_loss=2192907.00000
+val_loss=2680974.00000
+val_loss=2247364.25000
+val_loss=2283677.75000
+val_loss=2308149.00000
+surrogate= 0.32760, entropy=12219.17969, loss= 0.32760
+surrogate= 0.33868, entropy=12219.28711, loss= 0.33868
+surrogate= 0.32821, entropy=12219.29102, loss= 0.32821
+surrogate= 0.34044, entropy=12219.29102, loss= 0.34044
+surrogate= 0.34323, entropy=12219.29102, loss= 0.34323
+surrogate= 0.35469, entropy=12219.29102, loss= 0.35469
+surrogate= 0.34005, entropy=12219.29102, loss= 0.34005
+surrogate= 0.31962, entropy=12219.29102, loss= 0.31962
+surrogate= 0.32922, entropy=12219.29102, loss= 0.32922
+surrogate= 0.32341, entropy=12219.29102, loss= 0.32341
+std_min= 0.69528, std_max= 1.41722, std_mean= 1.01251
+val lr: [2.682352941176471e-05], policy lr: [0.002682352941176471]
+Traning Time elapsed (s): 1.555318832397461
+Policy Loss: 0.32341, | Entropy Bonus: -0, | Value Loss: 2.3081e+06
+Time elapsed (s): 303.8755350112915
+Agent stdevs: 1.0125059
+--------------------------------------------------------------------------------
+
+Iteration 0, step 9
+++++++++ Policy training ++++++++++
+Current mean reward: -3891.557139 | mean episode length: 24.000000
+val_loss=2746639.00000
+val_loss=2129319.50000
+val_loss=2085578.62500
+val_loss=2271479.00000
+val_loss=2140243.25000
+val_loss=2249995.00000
+val_loss=2055242.75000
+val_loss=1980518.62500
+val_loss=2554910.50000
+val_loss=2445582.00000
+surrogate= 0.00891, entropy=45.64494, loss=-0.44754
+surrogate= 0.01738, entropy=45.64985, loss=-0.43912
+surrogate=-0.01401, entropy=45.65289, loss=-0.47054
+surrogate=-0.00267, entropy=45.65541, loss=-0.45922
+surrogate= 0.00063, entropy=45.65581, loss=-0.45593
+surrogate=-0.01934, entropy=45.65664, loss=-0.47591
+surrogate=-0.00952, entropy=45.65561, loss=-0.46608
+surrogate=-0.02011, entropy=45.66183, loss=-0.47673
+surrogate= 0.01888, entropy=45.66190, loss=-0.43774
+surrogate=-0.01600, entropy=45.66545, loss=-0.47265
+std_min= 0.88635, std_max= 1.10931, std_mean= 1.00927
+val lr: [0.00022058823529411765], policy lr: [0.00026470588235294115]
+Traning Time elapsed (s): 1.8201594352722168
+Policy Loss: -0.47265, | Entropy Bonus: -0.45665, | Value Loss: 2.4456e+06
+Time elapsed (s): 299.0208909511566
+Agent stdevs: 1.0092726
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3887.187217 | mean episode length: 24.000000
+val_loss=2395909.75000
+val_loss=2123179.50000
+val_loss=2072168.50000
+val_loss=2364006.50000
+val_loss=2510588.75000
+val_loss=2516487.75000
+val_loss=1987585.87500
+val_loss=2392053.00000
+val_loss=2104115.25000
+val_loss=2171336.75000
+surrogate= 0.33073, entropy=12222.89551, loss= 0.33073
+surrogate= 0.31354, entropy=12223.03516, loss= 0.31354
+surrogate= 0.29996, entropy=12223.04004, loss= 0.29996
+surrogate= 0.32786, entropy=12223.04004, loss= 0.32786
+surrogate= 0.32882, entropy=12223.04004, loss= 0.32882
+surrogate= 0.33995, entropy=12223.04004, loss= 0.33995
+surrogate= 0.32362, entropy=12223.04004, loss= 0.32362
+surrogate= 0.34134, entropy=12223.04004, loss= 0.34134
+surrogate= 0.33659, entropy=12223.04004, loss= 0.33659
+surrogate= 0.34628, entropy=12223.04004, loss= 0.34628
+std_min= 0.66881, std_max= 1.46044, std_mean= 1.01372
+val lr: [2.647058823529412e-05], policy lr: [0.0026470588235294116]
+Traning Time elapsed (s): 1.7845609188079834
+Policy Loss: 0.34628, | Entropy Bonus: -0, | Value Loss: 2.1713e+06
+Time elapsed (s): 300.3245630264282
+Agent stdevs: 1.0137153
+--------------------------------------------------------------------------------
+
+Iteration 0, step 10
+++++++++ Policy training ++++++++++
+Current mean reward: -3859.901395 | mean episode length: 24.000000
+val_loss=2245892.75000
+val_loss=2077529.50000
+val_loss=2215998.75000
+val_loss=2321594.00000
+val_loss=2150076.50000
+val_loss=2281631.00000
+val_loss=2305114.25000
+val_loss=1923184.62500
+val_loss=1903228.37500
+val_loss=1946356.00000
+surrogate=-0.01210, entropy=45.67599, loss=-0.46886
+surrogate= 0.01184, entropy=45.68772, loss=-0.44504
+surrogate=-0.00413, entropy=45.69600, loss=-0.46109
+surrogate= 0.01924, entropy=45.70603, loss=-0.43782
+surrogate= 0.00556, entropy=45.71122, loss=-0.45155
+surrogate=-0.04035, entropy=45.71869, loss=-0.49754
+surrogate=-0.01372, entropy=45.72013, loss=-0.47092
+surrogate= 0.00033, entropy=45.72075, loss=-0.45688
+surrogate=-0.01325, entropy=45.72850, loss=-0.47053
+surrogate=-0.01126, entropy=45.73342, loss=-0.46859
+std_min= 0.87264, std_max= 1.11229, std_mean= 1.01169
+val lr: [0.00021764705882352942], policy lr: [0.00026117647058823527]
+Traning Time elapsed (s): 1.5649983882904053
+Policy Loss: -0.46859, | Entropy Bonus: -0.45733, | Value Loss: 1.9464e+06
+Time elapsed (s): 295.89049196243286
+Agent stdevs: 1.0116866
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3840.992280 | mean episode length: 24.000000
+val_loss=2515966.50000
+val_loss=2250849.00000
+val_loss=1789532.00000
+val_loss=2075504.12500
+val_loss=2248466.25000
+val_loss=2230063.00000
+val_loss=2104921.00000
+val_loss=2358840.75000
+val_loss=2199267.75000
+val_loss=1970436.25000
+surrogate= 0.32472, entropy=12219.73535, loss= 0.32472
+surrogate= 0.33149, entropy=12219.60742, loss= 0.33149
+surrogate= 0.33716, entropy=12219.60254, loss= 0.33716
+surrogate= 0.34346, entropy=12219.60254, loss= 0.34346
+surrogate= 0.32685, entropy=12219.60254, loss= 0.32685
+surrogate= 0.32279, entropy=12219.60254, loss= 0.32279
+surrogate= 0.33257, entropy=12219.60254, loss= 0.33257
+surrogate= 0.32766, entropy=12219.60254, loss= 0.32766
+surrogate= 0.31912, entropy=12219.60254, loss= 0.31912
+surrogate= 0.33121, entropy=12219.60254, loss= 0.33121
+std_min= 0.65220, std_max= 1.47909, std_mean= 1.01411
+val lr: [2.6117647058823532e-05], policy lr: [0.002611764705882353]
+Traning Time elapsed (s): 2.1099627017974854
+Policy Loss: 0.33121, | Entropy Bonus: -0, | Value Loss: 1.9704e+06
+Time elapsed (s): 306.56206250190735
+Agent stdevs: 1.0141108
+--------------------------------------------------------------------------------
+
+Iteration 0, step 11
+++++++++ Policy training ++++++++++
+Current mean reward: -3796.041954 | mean episode length: 24.000000
+val_loss=1961472.12500
+val_loss=1925869.62500
+val_loss=1910683.62500
+val_loss=2164273.50000
+val_loss=2262664.00000
+val_loss=2042779.87500
+val_loss=2075696.75000
+val_loss=1964837.75000
+val_loss=2309577.50000
+val_loss=2098350.75000
+surrogate= 0.00069, entropy=45.74333, loss=-0.45675
+surrogate= 0.00790, entropy=45.75042, loss=-0.44960
+surrogate=-0.00402, entropy=45.76176, loss=-0.46164
+surrogate=-0.00717, entropy=45.76345, loss=-0.46480
+surrogate=-0.02326, entropy=45.76567, loss=-0.48092
+surrogate=-0.01642, entropy=45.77422, loss=-0.47416
+surrogate=-0.04183, entropy=45.78065, loss=-0.49964
+surrogate=-0.02686, entropy=45.78642, loss=-0.48473
+surrogate= 0.00561, entropy=45.78738, loss=-0.45226
+surrogate=-0.01877, entropy=45.79410, loss=-0.47671
+std_min= 0.86771, std_max= 1.10699, std_mean= 1.01371
+val lr: [0.00021470588235294118], policy lr: [0.0002576470588235294]
+Traning Time elapsed (s): 1.4614336490631104
+Policy Loss: -0.47671, | Entropy Bonus: -0.45794, | Value Loss: 2.0984e+06
+Time elapsed (s): 296.64099192619324
+Agent stdevs: 1.0137084
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3785.704155 | mean episode length: 24.000000
+val_loss=2006480.75000
+val_loss=2090132.87500
+val_loss=1703905.50000
+val_loss=2358039.00000
+val_loss=1954881.25000
+val_loss=2149392.00000
+val_loss=2449831.00000
+val_loss=2176393.25000
+val_loss=1979462.00000
+val_loss=2110770.50000
+surrogate= 0.32671, entropy=12220.73926, loss= 0.32671
+surrogate= 0.30946, entropy=12220.78320, loss= 0.30946
+surrogate= 0.33914, entropy=12220.78418, loss= 0.33914
+surrogate= 0.31172, entropy=12220.78418, loss= 0.31172
+surrogate= 0.33204, entropy=12220.78418, loss= 0.33204
+surrogate= 0.33910, entropy=12220.78418, loss= 0.33910
+surrogate= 0.33857, entropy=12220.78418, loss= 0.33857
+surrogate= 0.33711, entropy=12220.78418, loss= 0.33711
+surrogate= 0.33913, entropy=12220.78418, loss= 0.33913
+surrogate= 0.32471, entropy=12220.78418, loss= 0.32471
+std_min= 0.66890, std_max= 1.53511, std_mean= 1.01508
+val lr: [2.5764705882352945e-05], policy lr: [0.0025764705882352942]
+Traning Time elapsed (s): 1.826932668685913
+Policy Loss: 0.32471, | Entropy Bonus: -0, | Value Loss: 2.1108e+06
+Time elapsed (s): 299.27067041397095
+Agent stdevs: 1.0150757
+--------------------------------------------------------------------------------
+
+Iteration 0, step 12
+++++++++ Policy training ++++++++++
+Current mean reward: -3881.478408 | mean episode length: 24.000000
+val_loss=2336518.75000
+val_loss=2116421.50000
+val_loss=2323602.50000
+val_loss=2394445.50000
+val_loss=1843293.62500
+val_loss=2145561.25000
+val_loss=2600970.25000
+val_loss=2348482.00000
+val_loss=1989206.37500
+val_loss=2218589.25000
+surrogate=-0.00777, entropy=45.80636, loss=-0.46583
+surrogate=-0.02003, entropy=45.82066, loss=-0.47823
+surrogate= 0.00484, entropy=45.83083, loss=-0.45347
+surrogate=-0.00572, entropy=45.84445, loss=-0.46416
+surrogate=-0.00069, entropy=45.85491, loss=-0.45924
+surrogate=-0.02798, entropy=45.86622, loss=-0.48664
+surrogate= 0.01063, entropy=45.87423, loss=-0.44811
+surrogate= 0.00345, entropy=45.88154, loss=-0.45537
+surrogate=-0.02686, entropy=45.89165, loss=-0.48577
+surrogate=-0.03897, entropy=45.89867, loss=-0.49795
+std_min= 0.85931, std_max= 1.12748, std_mean= 1.01726
+val lr: [0.00021176470588235295], policy lr: [0.0002541176470588235]
+Traning Time elapsed (s): 1.9287047386169434
+Policy Loss: -0.49795, | Entropy Bonus: -0.45899, | Value Loss: 2.2186e+06
+Time elapsed (s): 298.1536409854889
+Agent stdevs: 1.0172639
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3782.504711 | mean episode length: 24.000000
+val_loss=2299007.50000
+val_loss=2177071.00000
+val_loss=2272996.00000
+val_loss=2161789.75000
+val_loss=2603721.75000
+val_loss=1965450.62500
+val_loss=1899194.00000
+val_loss=2199715.75000
+val_loss=2359443.50000
+val_loss=2161357.50000
+surrogate= 0.31522, entropy=12231.34668, loss= 0.31522
+surrogate= 0.33247, entropy=12231.75781, loss= 0.33247
+surrogate= 0.33627, entropy=12231.77148, loss= 0.33627
+surrogate= 0.33325, entropy=12231.77246, loss= 0.33325
+surrogate= 0.32851, entropy=12231.77246, loss= 0.32851
+surrogate= 0.32143, entropy=12231.77246, loss= 0.32143
+surrogate= 0.32122, entropy=12231.77246, loss= 0.32122
+surrogate= 0.32766, entropy=12231.77246, loss= 0.32766
+surrogate= 0.32742, entropy=12231.77246, loss= 0.32742
+surrogate= 0.31772, entropy=12231.77246, loss= 0.31772
+std_min= 0.64645, std_max= 1.60163, std_mean= 1.01714
+val lr: [2.5411764705882355e-05], policy lr: [0.0025411764705882355]
+Traning Time elapsed (s): 1.5439691543579102
+Policy Loss: 0.31772, | Entropy Bonus: -0, | Value Loss: 2.1614e+06
+Time elapsed (s): 298.45646929740906
+Agent stdevs: 1.0171412
+--------------------------------------------------------------------------------
+
+Iteration 0, step 13
+++++++++ Policy training ++++++++++
+Current mean reward: -3781.743148 | mean episode length: 24.000000
+val_loss=2092641.62500
+val_loss=2128389.50000
+val_loss=1861903.62500
+val_loss=1943613.75000
+val_loss=2308423.75000
+val_loss=2407531.25000
+val_loss=2462628.50000
+val_loss=1889988.37500
+val_loss=1929145.87500
+val_loss=2177033.75000
+surrogate=-0.00246, entropy=45.90086, loss=-0.46147
+surrogate=-0.02087, entropy=45.90941, loss=-0.47996
+surrogate=-0.01630, entropy=45.92003, loss=-0.47551
+surrogate=-0.01644, entropy=45.92520, loss=-0.47569
+surrogate=-0.02594, entropy=45.93172, loss=-0.48526
+surrogate=-0.02456, entropy=45.93301, loss=-0.48389
+surrogate=-0.01332, entropy=45.93413, loss=-0.47267
+surrogate= 0.00308, entropy=45.93862, loss=-0.45630
+surrogate=-0.01632, entropy=45.94393, loss=-0.47576
+surrogate=-0.01165, entropy=45.94045, loss=-0.47105
+std_min= 0.85282, std_max= 1.12632, std_mean= 1.01872
+val lr: [0.00020882352941176471], policy lr: [0.0002505882352941176]
+Traning Time elapsed (s): 1.6927597522735596
+Policy Loss: -0.47105, | Entropy Bonus: -0.4594, | Value Loss: 2.177e+06
+Time elapsed (s): 305.16043519973755
+Agent stdevs: 1.018724
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3839.780308 | mean episode length: 24.000000
+val_loss=2345573.75000
+val_loss=2340534.00000
+val_loss=2163921.50000
+val_loss=2070509.37500
+val_loss=2062937.12500
+val_loss=2583398.00000
+val_loss=2156321.25000
+val_loss=2179040.50000
+val_loss=2113998.75000
+val_loss=1783163.75000
+surrogate= 0.33135, entropy=12233.25098, loss= 0.33135
+surrogate= 0.32548, entropy=12233.30859, loss= 0.32548
+surrogate= 0.34320, entropy=12233.31055, loss= 0.34320
+surrogate= 0.33116, entropy=12233.31055, loss= 0.33116
+surrogate= 0.33451, entropy=12233.31055, loss= 0.33451
+surrogate= 0.32281, entropy=12233.31055, loss= 0.32281
+surrogate= 0.34883, entropy=12233.31055, loss= 0.34883
+surrogate= 0.32751, entropy=12233.31055, loss= 0.32751
+surrogate= 0.34403, entropy=12233.31055, loss= 0.34403
+surrogate= 0.34130, entropy=12233.31055, loss= 0.34130
+std_min= 0.62598, std_max= 1.71323, std_mean= 1.01800
+val lr: [2.5058823529411768e-05], policy lr: [0.002505882352941177]
+Traning Time elapsed (s): 1.656510829925537
+Policy Loss: 0.3413, | Entropy Bonus: -0, | Value Loss: 1.7832e+06
+Time elapsed (s): 303.738831281662
+Agent stdevs: 1.0180049
+--------------------------------------------------------------------------------
+
+Iteration 0, step 14
+++++++++ Policy training ++++++++++
+Current mean reward: -3727.360968 | mean episode length: 24.000000
+val_loss=2096975.25000
+val_loss=2048046.62500
+val_loss=2257614.75000
+val_loss=2040536.50000
+val_loss=2062163.12500
+val_loss=1965550.87500
+val_loss=1948633.37500
+val_loss=2055961.75000
+val_loss=2203950.75000
+val_loss=1910065.87500
+surrogate=-0.01729, entropy=45.94276, loss=-0.47672
+surrogate=-0.00105, entropy=45.93874, loss=-0.46043
+surrogate= 0.00575, entropy=45.93156, loss=-0.45357
+surrogate=-0.02501, entropy=45.92873, loss=-0.48430
+surrogate=-0.02687, entropy=45.92172, loss=-0.48609
+surrogate=-0.01891, entropy=45.91703, loss=-0.47808
+surrogate= 0.00130, entropy=45.91139, loss=-0.45781
+surrogate= 0.02304, entropy=45.90834, loss=-0.43605
+surrogate=-0.03193, entropy=45.90966, loss=-0.49102
+surrogate=-0.01228, entropy=45.90539, loss=-0.47134
+std_min= 0.83920, std_max= 1.11908, std_mean= 1.01780
+val lr: [0.00020588235294117645], policy lr: [0.00024705882352941174]
+Traning Time elapsed (s): 1.7514991760253906
+Policy Loss: -0.47134, | Entropy Bonus: -0.45905, | Value Loss: 1.9101e+06
+Time elapsed (s): 306.0317084789276
+Agent stdevs: 1.0177963
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3779.175537 | mean episode length: 24.000000
+val_loss=2002117.25000
+val_loss=1949765.37500
+val_loss=1861294.00000
+val_loss=2106457.50000
+val_loss=2027923.75000
+val_loss=1783638.62500
+val_loss=1993851.00000
+val_loss=2228492.25000
+val_loss=2033765.00000
+val_loss=2025417.00000
+surrogate= 0.32434, entropy=12237.95703, loss= 0.32434
+surrogate= 0.34289, entropy=12238.13770, loss= 0.34289
+surrogate= 0.34614, entropy=12238.14355, loss= 0.34614
+surrogate= 0.32554, entropy=12238.14453, loss= 0.32554
+surrogate= 0.33037, entropy=12238.14453, loss= 0.33037
+surrogate= 0.33994, entropy=12238.14453, loss= 0.33994
+surrogate= 0.34344, entropy=12238.14453, loss= 0.34344
+surrogate= 0.32068, entropy=12238.14453, loss= 0.32068
+surrogate= 0.34298, entropy=12238.14453, loss= 0.34298
+surrogate= 0.33635, entropy=12238.14453, loss= 0.33635
+std_min= 0.61694, std_max= 1.69592, std_mean= 1.01930
+val lr: [2.4705882352941174e-05], policy lr: [0.0024705882352941176]
+Traning Time elapsed (s): 1.5974082946777344
+Policy Loss: 0.33635, | Entropy Bonus: -0, | Value Loss: 2.0254e+06
+Time elapsed (s): 296.2480697631836
+Agent stdevs: 1.0192968
+--------------------------------------------------------------------------------
+
+Iteration 0, step 15
+++++++++ Policy training ++++++++++
+Current mean reward: -3652.426017 | mean episode length: 24.000000
+val_loss=1696515.50000
+val_loss=1810309.62500
+val_loss=1867889.50000
+val_loss=1786501.62500
+val_loss=2085801.12500
+val_loss=1762648.50000
+val_loss=1723591.25000
+val_loss=1689994.25000
+val_loss=2418942.50000
+val_loss=2075198.62500
+surrogate= 0.00529, entropy=45.90730, loss=-0.45378
+surrogate= 0.00361, entropy=45.89753, loss=-0.45537
+surrogate=-0.02831, entropy=45.90957, loss=-0.48740
+surrogate=-0.00197, entropy=45.91503, loss=-0.46112
+surrogate=-0.00223, entropy=45.91872, loss=-0.46142
+surrogate= 0.00605, entropy=45.92104, loss=-0.45316
+surrogate= 0.00940, entropy=45.92633, loss=-0.44986
+surrogate= 0.01279, entropy=45.93165, loss=-0.44652
+surrogate=-0.00171, entropy=45.93087, loss=-0.46102
+surrogate=-0.01099, entropy=45.92652, loss=-0.47026
+std_min= 0.82824, std_max= 1.12229, std_mean= 1.01873
+val lr: [0.00020294117647058824], policy lr: [0.00024352941176470586]
+Traning Time elapsed (s): 1.8964011669158936
+Policy Loss: -0.47026, | Entropy Bonus: -0.45927, | Value Loss: 2.0752e+06
+Time elapsed (s): 290.38756680488586
+Agent stdevs: 1.0187254
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3775.020793 | mean episode length: 24.000000
+val_loss=1976358.25000
+val_loss=2499270.00000
+val_loss=2186342.25000
+val_loss=2231908.00000
+val_loss=1904476.00000
+val_loss=2090526.37500
+val_loss=2441018.50000
+val_loss=2067876.12500
+val_loss=1836763.62500
+val_loss=2146002.25000
+surrogate= 0.33882, entropy=12242.38477, loss= 0.33882
+surrogate= 0.34089, entropy=12242.54980, loss= 0.34089
+surrogate= 0.34464, entropy=12242.55566, loss= 0.34464
+surrogate= 0.32357, entropy=12242.55566, loss= 0.32357
+surrogate= 0.33853, entropy=12242.55566, loss= 0.33853
+surrogate= 0.34015, entropy=12242.55566, loss= 0.34015
+surrogate= 0.33498, entropy=12242.55566, loss= 0.33498
+surrogate= 0.33086, entropy=12242.55566, loss= 0.33086
+surrogate= 0.32655, entropy=12242.55566, loss= 0.32655
+surrogate= 0.34260, entropy=12242.55566, loss= 0.34260
+std_min= 0.60119, std_max= 1.71855, std_mean= 1.02060
+val lr: [2.4352941176470587e-05], policy lr: [0.002435294117647059]
+Traning Time elapsed (s): 1.9220693111419678
+Policy Loss: 0.3426, | Entropy Bonus: -0, | Value Loss: 2.146e+06
+Time elapsed (s): 291.3008418083191
+Agent stdevs: 1.0205954
+--------------------------------------------------------------------------------
+
+Iteration 0, step 16
+++++++++ Policy training ++++++++++
+Current mean reward: -3722.582874 | mean episode length: 24.000000
+val_loss=1839537.00000
+val_loss=2039973.37500
+val_loss=1779328.50000
+val_loss=1650131.50000
+val_loss=1780795.75000
+val_loss=1837788.87500
+val_loss=1982991.12500
+val_loss=1797287.25000
+val_loss=2021613.62500
+val_loss=1766335.87500
+surrogate= 0.00471, entropy=45.92563, loss=-0.45454
+surrogate= 0.00443, entropy=45.92274, loss=-0.45479
+surrogate= 0.03245, entropy=45.92013, loss=-0.42675
+surrogate= 0.02424, entropy=45.91025, loss=-0.43486
+surrogate=-0.01586, entropy=45.90902, loss=-0.47495
+surrogate=-0.03012, entropy=45.90490, loss=-0.48917
+surrogate=-0.01625, entropy=45.90238, loss=-0.47528
+surrogate=-0.00415, entropy=45.90483, loss=-0.46320
+surrogate=-0.02360, entropy=45.89569, loss=-0.48255
+surrogate=-0.00328, entropy=45.89537, loss=-0.46223
+std_min= 0.82170, std_max= 1.12487, std_mean= 1.01779
+val lr: [0.0002], policy lr: [0.00023999999999999998]
+Traning Time elapsed (s): 1.5652165412902832
+Policy Loss: -0.46223, | Entropy Bonus: -0.45895, | Value Loss: 1.7663e+06
+Time elapsed (s): 283.52800369262695
+Agent stdevs: 1.0177866
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3699.564676 | mean episode length: 24.000000
+val_loss=1722926.87500
+val_loss=2365158.50000
+val_loss=1899577.75000
+val_loss=1826490.50000
+val_loss=1959217.50000
+val_loss=1865383.50000
+val_loss=2113624.25000
+val_loss=2193582.75000
+val_loss=2183849.75000
+val_loss=2026677.62500
+surrogate= 0.33902, entropy=12242.23242, loss= 0.33902
+surrogate= 0.32759, entropy=12242.21973, loss= 0.32759
+surrogate= 0.32412, entropy=12242.21973, loss= 0.32412
+surrogate= 0.33958, entropy=12242.21973, loss= 0.33958
+surrogate= 0.32082, entropy=12242.21973, loss= 0.32082
+surrogate= 0.33456, entropy=12242.21973, loss= 0.33456
+surrogate= 0.34135, entropy=12242.21973, loss= 0.34135
+surrogate= 0.33119, entropy=12242.21973, loss= 0.33119
+surrogate= 0.31939, entropy=12242.21973, loss= 0.31939
+surrogate= 0.32821, entropy=12242.21973, loss= 0.32821
+std_min= 0.58849, std_max= 1.72824, std_mean= 1.02115
+val lr: [2.4e-05], policy lr: [0.0024000000000000002]
+Traning Time elapsed (s): 1.833254337310791
+Policy Loss: 0.32821, | Entropy Bonus: -0, | Value Loss: 2.0267e+06
+Time elapsed (s): 284.3274872303009
+Agent stdevs: 1.0211504
+--------------------------------------------------------------------------------
+
+Iteration 0, step 17
+++++++++ Policy training ++++++++++
+Current mean reward: -3698.711870 | mean episode length: 24.000000
+val_loss=2010141.87500
+val_loss=1692110.62500
+val_loss=2006419.12500
+val_loss=1826119.75000
+val_loss=1688753.50000
+val_loss=1619741.12500
+val_loss=1806262.25000
+val_loss=1979750.25000
+val_loss=2071862.25000
+val_loss=1901712.12500
+surrogate=-0.00144, entropy=45.90137, loss=-0.46046
+surrogate= 0.00582, entropy=45.91010, loss=-0.45328
+surrogate=-0.01962, entropy=45.91274, loss=-0.47875
+surrogate= 0.01076, entropy=45.91757, loss=-0.44841
+surrogate=-0.00769, entropy=45.92155, loss=-0.46690
+surrogate=-0.02694, entropy=45.91799, loss=-0.48612
+surrogate=-0.02263, entropy=45.92835, loss=-0.48192
+surrogate=-0.02189, entropy=45.93502, loss=-0.48124
+surrogate=-0.03734, entropy=45.93307, loss=-0.49668
+surrogate=-0.03724, entropy=45.93591, loss=-0.49660
+std_min= 0.81311, std_max= 1.11950, std_mean= 1.01938
+val lr: [0.00019705882352941177], policy lr: [0.0002364705882352941]
+Traning Time elapsed (s): 1.8810865879058838
+Policy Loss: -0.4966, | Entropy Bonus: -0.45936, | Value Loss: 1.9017e+06
+Time elapsed (s): 287.65166687965393
+Agent stdevs: 1.0193809
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3716.698239 | mean episode length: 24.000000
+val_loss=2199782.75000
+val_loss=1947252.75000
+val_loss=2146386.50000
+val_loss=2189679.50000
+val_loss=2067866.25000
+val_loss=2054830.50000
+val_loss=1967966.12500
+val_loss=2038292.87500
+val_loss=1931900.75000
+val_loss=2006092.75000
+surrogate= 0.31996, entropy=12251.71484, loss= 0.31996
+surrogate= 0.33651, entropy=12252.08398, loss= 0.33651
+surrogate= 0.34201, entropy=12252.09668, loss= 0.34201
+surrogate= 0.31710, entropy=12252.09766, loss= 0.31710
+surrogate= 0.34235, entropy=12252.09766, loss= 0.34235
+surrogate= 0.34031, entropy=12252.09766, loss= 0.34031
+surrogate= 0.31370, entropy=12252.09766, loss= 0.31370
+surrogate= 0.34486, entropy=12252.09766, loss= 0.34486
+surrogate= 0.33577, entropy=12252.09766, loss= 0.33577
+surrogate= 0.34485, entropy=12252.09766, loss= 0.34485
+std_min= 0.58213, std_max= 1.79305, std_mean= 1.02296
+val lr: [2.364705882352941e-05], policy lr: [0.002364705882352941]
+Traning Time elapsed (s): 1.5464355945587158
+Policy Loss: 0.34485, | Entropy Bonus: -0, | Value Loss: 2.0061e+06
+Time elapsed (s): 288.67566418647766
+Agent stdevs: 1.0229614
+--------------------------------------------------------------------------------
+
+Iteration 0, step 18
+++++++++ Policy training ++++++++++
+Current mean reward: -3677.424102 | mean episode length: 24.000000
+val_loss=1692186.37500
+val_loss=1717396.62500
+val_loss=1733272.87500
+val_loss=1923433.00000
+val_loss=2158590.75000
+val_loss=1947551.12500
+val_loss=1884460.50000
+val_loss=2171532.75000
+val_loss=2055969.00000
+val_loss=1912202.00000
+surrogate= 0.01417, entropy=45.93787, loss=-0.44521
+surrogate=-0.02482, entropy=45.93814, loss=-0.48420
+surrogate= 0.02254, entropy=45.93327, loss=-0.43679
+surrogate=-0.02016, entropy=45.93417, loss=-0.47950
+surrogate=-0.01649, entropy=45.93366, loss=-0.47583
+surrogate= 0.00230, entropy=45.93631, loss=-0.45706
+surrogate=-0.01232, entropy=45.93233, loss=-0.47164
+surrogate=-0.03848, entropy=45.93411, loss=-0.49782
+surrogate=-0.01085, entropy=45.93510, loss=-0.47021
+surrogate=-0.03258, entropy=45.93559, loss=-0.49194
+std_min= 0.79760, std_max= 1.14232, std_mean= 1.01952
+val lr: [0.00019411764705882354], policy lr: [0.00023294117647058821]
+Traning Time elapsed (s): 1.8365092277526855
+Policy Loss: -0.49194, | Entropy Bonus: -0.45936, | Value Loss: 1.9122e+06
+Time elapsed (s): 300.82997846603394
+Agent stdevs: 1.019522
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3654.720591 | mean episode length: 24.000000
+val_loss=1944798.62500
+val_loss=1765035.75000
+val_loss=1855349.50000
+val_loss=2188877.00000
+val_loss=1754692.62500
+val_loss=1992717.37500
+val_loss=2040358.12500
+val_loss=1822489.12500
+val_loss=1986011.25000
+val_loss=2346319.00000
+surrogate= 0.33678, entropy=12250.59570, loss= 0.33678
+surrogate= 0.34199, entropy=12250.53809, loss= 0.34199
+surrogate= 0.34000, entropy=12250.53613, loss= 0.34000
+surrogate= 0.34170, entropy=12250.53516, loss= 0.34170
+surrogate= 0.32092, entropy=12250.53516, loss= 0.32092
+surrogate= 0.34640, entropy=12250.53516, loss= 0.34640
+surrogate= 0.33289, entropy=12250.53516, loss= 0.33289
+surrogate= 0.34034, entropy=12250.53516, loss= 0.34034
+surrogate= 0.32728, entropy=12250.53516, loss= 0.32728
+surrogate= 0.32749, entropy=12250.53516, loss= 0.32749
+std_min= 0.56308, std_max= 1.79051, std_mean= 1.02346
+val lr: [2.3294117647058824e-05], policy lr: [0.0023294117647058824]
+Traning Time elapsed (s): 1.5690319538116455
+Policy Loss: 0.32749, | Entropy Bonus: -0, | Value Loss: 2.3463e+06
+Time elapsed (s): 290.3261239528656
+Agent stdevs: 1.0234592
+--------------------------------------------------------------------------------
+
+Iteration 0, step 19
+++++++++ Policy training ++++++++++
+Current mean reward: -3713.271087 | mean episode length: 24.000000
+val_loss=2106138.00000
+val_loss=1707952.50000
+val_loss=2115707.00000
+val_loss=1927209.12500
+val_loss=1762021.37500
+val_loss=1695648.37500
+val_loss=1825707.50000
+val_loss=1962851.50000
+val_loss=2175385.00000
+val_loss=1903381.87500
+surrogate=-0.01029, entropy=45.94545, loss=-0.46974
+surrogate=-0.00615, entropy=45.95055, loss=-0.46566
+surrogate=-0.01086, entropy=45.95528, loss=-0.47042
+surrogate=-0.02425, entropy=45.95633, loss=-0.48382
+surrogate= 0.01045, entropy=45.96380, loss=-0.44919
+surrogate=-0.01385, entropy=45.96701, loss=-0.47352
+surrogate=-0.01965, entropy=45.97358, loss=-0.47938
+surrogate=-0.00819, entropy=45.97285, loss=-0.46792
+surrogate=-0.01566, entropy=45.97553, loss=-0.47541
+surrogate=-0.00758, entropy=45.97782, loss=-0.46736
+std_min= 0.79272, std_max= 1.15602, std_mean= 1.02106
+val lr: [0.00019117647058823528], policy lr: [0.0002294117647058823]
+Traning Time elapsed (s): 1.8445665836334229
+Policy Loss: -0.46736, | Entropy Bonus: -0.45978, | Value Loss: 1.9034e+06
+Time elapsed (s): 289.5121386051178
+Agent stdevs: 1.021064
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3738.506959 | mean episode length: 24.000000
+val_loss=1989316.62500
+val_loss=2147449.25000
+val_loss=1841662.37500
+val_loss=1745004.37500
+val_loss=1887727.25000
+val_loss=1938856.50000
+val_loss=2070861.50000
+val_loss=2280212.50000
+val_loss=1932755.12500
+val_loss=2004564.62500
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+surrogate=     nan, entropy=     nan, loss=     nan
+std_min=     nan, std_max=     nan, std_mean=     nan
+val lr: [2.2941176470588233e-05], policy lr: [0.0022941176470588232]
+Traning Time elapsed (s): 1.5187315940856934
+Policy Loss: nan, | Entropy Bonus: nan, | Value Loss: 2.0046e+06
+Time elapsed (s): 290.31880807876587
+Agent stdevs: nan
+WARNING  21:55:34     NaN or Inf found in input tensor.
+WARNING  21:55:34     NaN or Inf found in input tensor.
+WARNING  21:55:34     NaN or Inf found in input tensor.
+WARNING  21:55:34     NaN or Inf found in input tensor.
+--------------------------------------------------------------------------------
+
+Iteration 0, step 20
+++++++++ Policy training ++++++++++
+An error occurred during training:
+Traceback (most recent call last):
+  File "run.py", line 219, in main
+    mean_reward = p.train_step()
+  File "/root/code/PROTECTED_PG/policy_gradients/agent.py", line 1286, in train_step
+    avg_ep_reward = self.train_step_impl(adversary_step=False,
+  File "/root/code/PROTECTED_PG/policy_gradients/agent.py", line 1326, in train_step_impl
+    saps, avg_ep_reward, avg_ep_length = self.collect_saps(num_saps,
+  File "/root/code/PROTECTED_PG/policy_gradients/agent.py", line 982, in collect_saps
+    output = self.run_trajectories(num_saps,
+  File "/root/code/PROTECTED_PG/policy_gradients/agent.py", line 636, in run_trajectories
+    ret = self.multi_actor_step(next_actions, envs)
+  File "/root/code/PROTECTED_PG/policy_gradients/agent.py", line 448, in multi_actor_step
+    two_action_list = [map_to_discrete(val, 2) for val in gym_action[0:10]]
+  File "/root/code/PROTECTED_PG/policy_gradients/agent.py", line 448, in <listcomp>
+    two_action_list = [map_to_discrete(val, 2) for val in gym_action[0:10]]
+  File "/root/code/PROTECTED_PG/policy_gradients/agent.py", line 1821, in map_to_discrete
+    discrete_value = int(round(scaled))
+ValueError: cannot convert float NaN to integer
+Models saved to /root/code/PROTECTED_PG/protected_8500Node/agents/b950c1cb-4000-47ea-a245-043cbcdaac50
+Total Elapsed Time: 11961.427876 seconds

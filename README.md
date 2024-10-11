@@ -153,3 +153,98 @@ Please cite our work if you find it is helpful:
   year={2023}
 }
 ```
+
+### test
+
+#### advpolicy
+--config-path
+/root/code/PROTECTED_PG/configs/config_123Bus.json
+--deterministic
+--ref-model-list
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_0
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_1
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_2
+--results-log
+logs/test_123Bus_worst_adv.log
+--attack-eps
+0.15
+--attack-method
+advpolicy
+--attack-advpolicy-network
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_0
+
+
+
+#### paadvpolicy
+--config-path
+/root/code/PROTECTED_PG/configs/config_123Bus_pa_ppo.json
+--deterministic
+--ref-model-list
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_0
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_1
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_2
+--results-log
+logs/test_123Bus_pa_adv.log
+--attack-eps
+0.15
+--attack-method
+paadvpolicy
+--attack-advpolicy-network
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_0
+
+
+#### random
+--config-path
+/root/code/PROTECTED_PG/configs/config_123Bus.json
+--deterministic
+--ref-model-list
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_0
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_1
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_2
+--results-log
+logs/test_123Bus_random_adv.log
+--attack-eps
+0.15
+--attack-method
+random
+
+#### gaussian
+--config-path
+/root/code/PROTECTED_PG/configs/config_123Bus.json
+--deterministic
+--ref-model-list
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_0
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_1
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_2
+--results-log
+logs/test_123Bus_gaussian_adv.log
+--attack-eps
+0.15
+--attack-method
+gaussian
+
+
+
+#### poisson
+--config-path
+/root/code/PROTECTED_PG/configs/config_123Bus.json
+--deterministic
+--ref-model-list
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_0
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_1
+/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents/45fb7a29-1b2e-4ec3-b832-39681770c1e6/model_2
+--results-log
+logs/test_123Bus_poisson_adv.log
+--attack-eps
+0.15
+--attack-method
+poisson
+
+
+
+
+
+
+### 训练 adv_pa_ppo
+python run.py --config-path configs/config_123Bus_pa_ppo.json --mode adv_pa_ppo 
+--iteration 3 --attack-multiple-victims --no-load-adv-policy 

@@ -430,11 +430,23 @@ class Trainer():
         completed_episode_info = []
         for action, env in zip(actions, envs):
             # 如果 是power gym
-            if 'powergym_env' in self.params:
+            if self.params['game'] == '13Bus' or self.params['game'] == '34Bus':
                 action = torch.sigmoid(action)
                 gym_action = action[0].cpu().numpy()
                 two_action_list = [map_to_discrete(val, 2) for val in gym_action[0:2]]
                 four_action_list = [map_to_discrete(val, 32) for val in gym_action[2:]]
+                gym_action = two_action_list + four_action_list
+            elif self.params['game'] == '123Bus':
+                action = torch.sigmoid(action)
+                gym_action = action[0].cpu().numpy()
+                two_action_list = [map_to_discrete(val, 2) for val in gym_action[0:4]]
+                four_action_list = [map_to_discrete(val, 32) for val in gym_action[4:]]
+                gym_action = two_action_list + four_action_list
+            elif self.params['game'] == '8500Node':
+                action = torch.sigmoid(action)
+                gym_action = action[0].cpu().numpy()
+                two_action_list = [map_to_discrete(val, 2) for val in gym_action[0:10]]
+                four_action_list = [map_to_discrete(val, 32) for val in gym_action[10:]]
                 gym_action = two_action_list + four_action_list
             else:
                 gym_action = action[0].cpu().numpy()
@@ -802,6 +814,15 @@ class Trainer():
             # Apply an uniform random noise.
             noise = torch.empty_like(last_states).uniform_(-eps, eps)
             return (last_states + noise).detach()
+        elif self.params.ATTACK_METHOD == "gaussian" :
+            # Apply Gaussian (normal) noise.
+            noise = torch.normal(mean=0, std=eps/3.0, size=last_states.size(), device=last_states.device)
+            return (last_states + noise).detach()
+        elif self.params.ATTACK_METHOD == "poisson":
+            last_states_positive = torch.clamp(last_states, min=0)  # 将所有小于0的值设置为0
+            noise = torch.poisson(last_states_positive)
+            return (last_states + noise - last_states_positive).detach()
+
         elif self.params.ATTACK_METHOD == "action" or self.params.ATTACK_METHOD == "action+imit":
             if steps > 0:
                 if self.params.ATTACK_STEP_EPS == "auto":
@@ -1336,17 +1357,22 @@ class Trainer():
                 self.exp3.update(tmp_rew, self.best_victim)
             self.reset_to_current_victim()
             # self.merge_saps(saps, past_victim_saps)
+            start_time1 = time.time()
             if not self.params.attack_multiple_victims:
                 policy_loss, surr_loss, entropy_bonus, val_loss = self.take_steps(saps, adversary_step=adversary_step,
                                                                                   increment_scheduler=increment_scheduler,
                                                                                   saps2=past_victim_saps)
             else:
+
                 policy_loss, surr_loss, entropy_bonus, val_loss = self.take_steps(past_victim_saps,
                                                                                   adversary_step=adversary_step,
                                                                                   increment_scheduler=increment_scheduler)
+            print("Traning Time elapsed (s):", time.time() - start_time1)
         else:
+            start_time2 = time.time()
             policy_loss, surr_loss, entropy_bonus, val_loss = self.take_steps(saps, adversary_step=adversary_step,
                                                                               increment_scheduler=increment_scheduler)
+            print("Traning Time elapsed (s):", time.time() - start_time2)
         # Logging code
         print(f"Policy Loss: {policy_loss:.5g}, | Entropy Bonus: {entropy_bonus:.5g}, | Value Loss: {val_loss:.5g}")
         print("Time elapsed (s):", time.time() - start_time)

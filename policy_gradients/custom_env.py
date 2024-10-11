@@ -110,7 +110,7 @@ class Env:
         self.env.seed(random.getrandbits(31))
         if self.game == "13Bus":
             idx = random.randint(0, 50)
-        elif self.game == "34Bus" or self.game == "123Bus":
+        elif self.game == "34Bus" or self.game == "123Bus"  or self.game == "8500Node":
             idx = random.randint(0, 15)
         # Reset the state, and the running total reward
         if hasattr(self, 'worker_idx'):
