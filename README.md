@@ -246,4 +246,28 @@ poisson
 
 
 ### 训练 adv_pa_ppo
-python run.py --config-path configs/config_123Bus_pa_ppo.json --mode adv_pa_ppo  --iteration 3 --attack-multiple-victims --no-load-adv-policy 
+python run.py --config-path configs/config_123Bus_pa_ppo.json --mode adv_pa_ppo  --iteration 3 --attack-multiple-victims --no-load-adv-policy
+出现error
+++++++++ Policy training ++++++++++
+An error occurred during training:
+Traceback (most recent call last):
+  File "run.py", line 219, in main
+    mean_reward = p.train_step()
+  File "/home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/policy_gradients/agent.py", line 1297, in train_step
+    avg_ep_reward = self.train_step_impl(adversary_step=False,
+  File "/home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/policy_gradients/agent.py", line 1349, in train_step_impl
+    self.best_victim = np.argmax(np.array(tmp_avg_ep_reward_list))
+  File "<__array_function__ internals>", line 180, in argmax
+  File "/home/ubuntu/miniconda3/envs/RobustZero/lib/python3.8/site-packages/numpy/core/fromnumeric.py", line 1216, in argmax
+    return _wrapfunc(a, 'argmax', axis=axis, out=out, **kwds)
+  File "/home/ubuntu/miniconda3/envs/RobustZero/lib/python3.8/site-packages/numpy/core/fromnumeric.py", line 57, in _wrapfunc
+    return bound(*args, **kwds)
+ValueError: attempt to get argmax of an empty sequence
+run.py:181: RuntimeWarning: Mean of empty slice.
+  final_5_rewards = np.array(rewards)[-5:].mean()
+/home/ubuntu/miniconda3/envs/RobustZero/lib/python3.8/site-packages/numpy/core/_methods.py:189: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+Models saved to /home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/protected_8500Node_adv_pa_ppo/agents/c2e5bc2f-e388-406d-93c3-dae8965493cc
+Total Elapsed Time: 41.892277 seconds
+
+python run.py --config-path configs/config_123Bus_pa_ppo.json --mode adv_pa_ppo  --iteration 3  --no-load-adv-policy 
