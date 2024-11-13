@@ -48,7 +48,7 @@
     "norm_states": false,
     "num_actors": 1,
     "num_minibatches": 32,
-    "out_dir": "/root/code/PROTECTED_PG/protected_123Bus_pa_ppo/agents",
+    "out_dir": "/home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/protected_123Bus_pa_ppo/agents",
     "policy_activation": "tanh",
     "policy_net_type": "CtsPolicy",
     "adv_policy_net_type": "CtsPolicy",

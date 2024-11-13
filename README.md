@@ -246,5 +246,4 @@ poisson
 
 
 ### 训练 adv_pa_ppo
-python run.py --config-path configs/config_123Bus_pa_ppo.json --mode adv_pa_ppo 
---iteration 3 --attack-multiple-victims --no-load-adv-policy 
+python run.py --config-path configs/config_123Bus_pa_ppo.json --mode adv_pa_ppo  --iteration 3 --attack-multiple-victims --no-load-adv-policy 
