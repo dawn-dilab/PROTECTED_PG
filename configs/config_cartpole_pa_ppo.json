@@ -77,7 +77,7 @@
     "value_multiplier": 0.1,
     "value_net_type": "ValueNet",
     "cuda_id": 0,
-    "iteration": 6,
+    "iteration": 3,
     "ref_model_list": [],
     "attack_multiple_victims": false,
     "attack_exp3": false,
