@@ -58,7 +58,7 @@
     "robust_ppo_detach_stdev": false,
     "robust_ppo_eps": 0.15,
     "robust_ppo_eps_scheduler_opts": "start=1,length=732",
-    "robust_ppo_method": "convex-relax",
+    "robust_ppo_method": "sgld",
     "robust_ppo_pgd_steps": 10,
     "robust_ppo_reg": 0.1,
     "save_frames": false,
