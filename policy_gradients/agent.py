@@ -94,7 +94,7 @@ class Trainer():
             self.policy_model = self.policy_model.to("cuda:{}".format(self.params.CUDA_ID))
 
         # Instantiate convex relaxation model when mode is 'robust_ppo'
-        if self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo':
+        if isinstance(self.policy_model, CtsPolicy) and (self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo'):
             self.create_relaxed_model(time_in_state)
 
         # Minimax training
@@ -202,7 +202,7 @@ class Trainer():
 
     def create_relaxed_model(self, time_in_state=False):
         # Create state perturbation model for robust PPO training.
-        if isinstance(self.policy_model, CtsPolicy) or isinstance(self.policy_model, DiscPolicy):
+        if isinstance(self.policy_model, CtsPolicy):
             if self.ROBUST_PPO_METHOD == "convex-relax":
                 from .convex_relaxation import RelaxedCtsPolicyForState
                 relaxed_policy_model = RelaxedCtsPolicyForState(
