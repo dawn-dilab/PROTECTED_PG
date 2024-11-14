@@ -765,7 +765,10 @@ class Trainer():
             diff = new_action - old_action
 
             cos_sim = ch.nn.CosineSimilarity()
-            loss = - ch.mean(cos_sim(diff, directions) + ch.norm(diff, dim=1, p=2))
+            if isinstance(self.policy_model, DiscPolicy):
+                loss = - ch.mean(cos_sim(diff, directions) + ch.norm(diff, dim=0, p=2))
+            else:
+                loss = - ch.mean(cos_sim(diff, directions) + ch.norm(diff, dim=1, p=2))
             loss.backward()
 
             update = noise.grad.sign() * eps
