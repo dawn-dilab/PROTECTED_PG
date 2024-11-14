@@ -202,7 +202,7 @@ class Trainer():
 
     def create_relaxed_model(self, time_in_state=False):
         # Create state perturbation model for robust PPO training.
-        if isinstance(self.policy_model, CtsPolicy):
+        if isinstance(self.policy_model, CtsPolicy) or isinstance(self.policy_model, DiscPolicy):
             if self.ROBUST_PPO_METHOD == "convex-relax":
                 from .convex_relaxation import RelaxedCtsPolicyForState
                 relaxed_policy_model = RelaxedCtsPolicyForState(
