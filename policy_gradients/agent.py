@@ -94,7 +94,7 @@ class Trainer():
             self.policy_model = self.policy_model.to("cuda:{}".format(self.params.CUDA_ID))
 
         # Instantiate convex relaxation model when mode is 'robust_ppo'
-        if isinstance(self.policy_model, CtsPolicy) and (self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo'):
+        if self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo':
             self.create_relaxed_model(time_in_state)
 
         # Minimax training
@@ -223,7 +223,16 @@ class Trainer():
                 self.robust_beta_scheduler = LinearScheduler(self.params.ROBUST_PPO_BETA,
                                                              self.params.ROBUST_PPO_BETA_SCHEDULER_OPTS)
         else:
-            raise NotImplementedError
+            self.relaxed_policy_model = None
+            self.robust_eps_scheduler = LinearScheduler(self.params.ROBUST_PPO_EPS,
+                                                        self.params.ROBUST_PPO_EPS_SCHEDULER_OPTS)
+            if self.params.ROBUST_PPO_BETA_SCHEDULER_OPTS == "same":
+                self.robust_beta_scheduler = LinearScheduler(self.params.ROBUST_PPO_BETA,
+                                                             self.params.ROBUST_PPO_EPS_SCHEDULER_OPTS)
+            else:
+                self.robust_beta_scheduler = LinearScheduler(self.params.ROBUST_PPO_BETA,
+                                                             self.params.ROBUST_PPO_BETA_SCHEDULER_OPTS)
+
 
     """Initialize sarsa training."""
 
