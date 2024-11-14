@@ -343,6 +343,8 @@ class DiscPolicy(nn.Module):
             prev_size = i
 
         self.final = nn.Linear(prev_size, action_dim)
+        stdev_init = ch.zeros(action_dim)
+        self.log_stdev = ch.nn.Parameter(stdev_init)
 
         # For the case where we want to share parameters 
         # between the policy and value networks

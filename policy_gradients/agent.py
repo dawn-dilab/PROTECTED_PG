@@ -202,7 +202,7 @@ class Trainer():
 
     def create_relaxed_model(self, time_in_state=False):
         # Create state perturbation model for robust PPO training.
-        if isinstance(self.policy_model, CtsPolicy):
+        if isinstance(self.policy_model, CtsPolicy) or isinstance(self.policy_model, DiscPolicy):
             if self.ROBUST_PPO_METHOD == "convex-relax":
                 from .convex_relaxation import RelaxedCtsPolicyForState
                 relaxed_policy_model = RelaxedCtsPolicyForState(
@@ -1258,8 +1258,7 @@ class Trainer():
                 saps.advantages, policy_model, policy_params,
                 store_to_pass, self.n_steps]
 
-        if (self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo') and isinstance(
-                self.policy_model, CtsPolicy) and not adversary_step:
+        if (self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo') and not adversary_step:
             args += [self.relaxed_policy_model, self.robust_eps_scheduler, self.robust_beta_scheduler]
 
         self.MAX_KL += self.MAX_KL_INCREMENT
