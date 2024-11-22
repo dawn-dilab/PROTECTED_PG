@@ -822,13 +822,13 @@ class Trainer():
                 return states.detach()
             else:
                 return last_states
-        elif self.params.ATTACK_METHOD == "random":
+        elif self.params.ATTACK_METHOD == "uniform":
             # Apply an uniform random noise.
             noise = torch.empty_like(last_states).uniform_(-eps, eps)
             return (last_states + noise).detach()
-        elif self.params.ATTACK_METHOD == "gaussian" :
+        elif self.params.ATTACK_METHOD == "random" :
             # Apply Gaussian (normal) noise.
-            noise = torch.normal(mean=0, std=eps/3.0, size=last_states.size(), device=last_states.device)
+            noise = torch.normal(mean=0, std=eps, size=last_states.size(), device=last_states.device)
             noise = torch.clamp(noise, -1 * eps, eps)
             return (last_states + noise).detach()
         elif self.params.ATTACK_METHOD == "poisson":
@@ -948,7 +948,7 @@ class Trainer():
             # Attack using a learned policy network.
             assert self.params.ATTACK_ADVPOLICY_NETWORK is not None
             if not hasattr(self, "attack_policy_network"):
-                self.attack_policy_network = self.adv_policy_net_class(self.NUM_FEATURES, self.NUM_FEATURES,
+                self.attack_policy_network = self.policy_net_class(self.NUM_FEATURES, self.NUM_FEATURES,
                                                                    self.INITIALIZATION,
                                                                    time_in_state=self.VALUE_CALC == "time",
                                                                    activation=self.policy_activation)
@@ -958,7 +958,7 @@ class Trainer():
             # Unlike other attacks we don't need step or eps here.
             # We don't sample and use deterministic adversary policy here.
             perturbations_mean, _ = self.attack_policy_network(last_states)
-            noise = torch.clamp(ch.nn.functional.hardtanh(perturbations_mean) * eps, -1 * eps, eps)
+            noise = torch.clamp(ch.nn.functional.hardtanh(perturbations_mean), -1 * eps, eps)
             # Clamp using tanh.
             perturbed_states = last_states + noise
             """
@@ -971,7 +971,7 @@ class Trainer():
             # Attack using a learned policy network.
             assert self.params.ATTACK_ADVPOLICY_NETWORK is not None
             if not hasattr(self, "attack_policy_network"):
-                self.attack_policy_network = self.adv_policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
+                self.attack_policy_network = self.policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
                                                                    self.INITIALIZATION,
                                                                    time_in_state=self.VALUE_CALC == "time",
                                                                    activation=self.policy_activation)
