@@ -1,0 +1,289 @@
+Iteration 2, step 5
+Saving checkpoints to /home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/protected_8500Node_ppo/agents/eeff59ac-2eb5-45b9-a22b-2d933d3b525d with reward -3671.9
+++++++++ Policy training ++++++++++
+Current mean reward: -3580.386244 | mean episode length: 24.000000
+val_loss=1502775.37500
+val_loss=1820761.50000
+val_loss=1943689.12500
+val_loss=1674623.37500
+val_loss=1712351.87500
+val_loss=1674655.37500
+val_loss=1881493.37500
+val_loss=1598936.37500
+val_loss=1571325.50000
+val_loss=1961830.62500
+surrogate=-0.00072, entropy=45.69159, loss=-0.45763
+surrogate= 0.00201, entropy=45.69707, loss=-0.45496
+surrogate=-0.01098, entropy=45.70003, loss=-0.46798
+surrogate=-0.00351, entropy=45.70523, loss=-0.46056
+surrogate=-0.02036, entropy=45.70848, loss=-0.47744
+surrogate=-0.03257, entropy=45.71304, loss=-0.48970
+surrogate=-0.02894, entropy=45.71447, loss=-0.48608
+surrogate= 0.00286, entropy=45.71616, loss=-0.45430
+surrogate=-0.00626, entropy=45.71742, loss=-0.46344
+surrogate=-0.04387, entropy=45.71892, loss=-0.50106
+std_min= 0.84984, std_max= 1.13761, std_mean= 1.01206
+val lr: [8.333333333333334e-05], policy lr: [0.0001]
+Traning Time elapsed (s): 10.630634784698486
+Policy Loss: -0.50106, | Entropy Bonus: -0.45719, | Value Loss: 1.9618e+06
+Time elapsed (s): 243.67781972885132
+Agent stdevs: 1.0120592
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3658.137271 | mean episode length: 24.000000
+Current mean reward: -3721.108980 | mean episode length: 24.000000
+val_loss=2168845.25000
+val_loss=2061874.62500
+val_loss=2070478.12500
+val_loss=2007887.62500
+val_loss=1850962.00000
+val_loss=2402082.50000
+val_loss=1922912.75000
+val_loss=1975769.87500
+val_loss=1909846.62500
+val_loss=1902376.87500
+val_loss=2137366.50000
+val_loss=1972862.37500
+val_loss=2260320.75000
+val_loss=1846204.75000
+val_loss=2246605.00000
+val_loss=2334534.75000
+val_loss=2136435.50000
+val_loss=2227000.75000
+val_loss=2303362.50000
+val_loss=2080494.00000
+surrogate= 0.36374, entropy=12179.97070, loss= 0.36374
+surrogate= 0.36793, entropy=12179.88770, loss= 0.36793
+surrogate= 0.36414, entropy=12179.88477, loss= 0.36414
+surrogate= 0.36764, entropy=12179.88477, loss= 0.36764
+surrogate= 0.36548, entropy=12179.88477, loss= 0.36548
+surrogate= 0.35818, entropy=12179.88477, loss= 0.35818
+surrogate= 0.36525, entropy=12179.88477, loss= 0.36525
+surrogate= 0.36629, entropy=12179.88477, loss= 0.36629
+surrogate= 0.37122, entropy=12179.88477, loss= 0.37122
+surrogate= 0.36217, entropy=12179.88477, loss= 0.36217
+std_min= 0.81893, std_max= 1.21344, std_mean= 1.00344
+val lr: [1e-05], policy lr: [0.0010000000000000002]
+Traning Time elapsed (s): 17.68420958518982
+Policy Loss: 0.36217, | Entropy Bonus: -0, | Value Loss: 1.9024e+06
+Time elapsed (s): 477.40698862075806
+Agent stdevs: 1.0034376
+--------------------------------------------------------------------------------
+
+Iteration 2, step 6
+Saving checkpoints to /home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/protected_8500Node_ppo/agents/eeff59ac-2eb5-45b9-a22b-2d933d3b525d with reward -3650
+++++++++ Policy training ++++++++++
+Current mean reward: -3646.734656 | mean episode length: 24.000000
+val_loss=2000165.50000
+val_loss=2086554.37500
+val_loss=1869712.75000
+val_loss=2090278.25000
+val_loss=1984981.37500
+val_loss=1882392.25000
+val_loss=2134593.75000
+val_loss=2230288.25000
+val_loss=1766415.25000
+val_loss=1994309.62500
+surrogate= 0.00043, entropy=45.72003, loss=-0.45677
+surrogate= 0.00202, entropy=45.72429, loss=-0.45523
+surrogate=-0.01271, entropy=45.72378, loss=-0.46995
+surrogate= 0.00686, entropy=45.72449, loss=-0.45038
+surrogate=-0.00195, entropy=45.72417, loss=-0.45919
+surrogate= 0.00731, entropy=45.72333, loss=-0.44992
+surrogate=-0.00547, entropy=45.72458, loss=-0.46271
+surrogate= 0.00218, entropy=45.72232, loss=-0.45504
+surrogate=-0.04162, entropy=45.72629, loss=-0.49889
+surrogate=-0.03403, entropy=45.72556, loss=-0.49129
+std_min= 0.83853, std_max= 1.14353, std_mean= 1.01238
+val lr: [5.555555555555555e-05], policy lr: [6.666666666666666e-05]
+Traning Time elapsed (s): 9.575325727462769
+Policy Loss: -0.49129, | Entropy Bonus: -0.45726, | Value Loss: 1.9943e+06
+Time elapsed (s): 246.85293793678284
+Agent stdevs: 1.01238
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3557.709269 | mean episode length: 24.000000
+Current mean reward: -3681.034324 | mean episode length: 24.000000
+val_loss=1971877.87500
+val_loss=1912458.50000
+val_loss=1830174.87500
+val_loss=1785122.37500
+val_loss=2000773.00000
+val_loss=1792974.87500
+val_loss=1660260.87500
+val_loss=1772548.37500
+val_loss=2067469.62500
+val_loss=1896093.87500
+val_loss=1936335.25000
+val_loss=1879507.37500
+val_loss=1996717.00000
+val_loss=2318412.25000
+val_loss=1803890.50000
+val_loss=2113371.00000
+val_loss=1738846.12500
+val_loss=2011078.87500
+val_loss=1968680.00000
+val_loss=2065817.50000
+surrogate= 0.36125, entropy=12179.83008, loss= 0.36125
+surrogate= 0.36898, entropy=12179.82812, loss= 0.36898
+surrogate= 0.36251, entropy=12179.82812, loss= 0.36251
+surrogate= 0.35766, entropy=12179.82812, loss= 0.35766
+surrogate= 0.36296, entropy=12179.82812, loss= 0.36296
+surrogate= 0.35628, entropy=12179.82812, loss= 0.35628
+surrogate= 0.36299, entropy=12179.82812, loss= 0.36299
+surrogate= 0.35953, entropy=12179.82812, loss= 0.35953
+surrogate= 0.35656, entropy=12179.82812, loss= 0.35656
+surrogate= 0.36220, entropy=12179.82812, loss= 0.36220
+std_min= 0.81468, std_max= 1.21998, std_mean= 1.00355
+val lr: [6.666666666666667e-06], policy lr: [0.0006666666666666666]
+Traning Time elapsed (s): 16.045176029205322
+Policy Loss: 0.3622, | Entropy Bonus: -0, | Value Loss: 1.8961e+06
+Time elapsed (s): 477.9299488067627
+Agent stdevs: 1.003545
+--------------------------------------------------------------------------------
+
+Iteration 2, step 7
+Saving checkpoints to /home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/protected_8500Node_ppo/agents/eeff59ac-2eb5-45b9-a22b-2d933d3b525d with reward -3641.8
+++++++++ Policy training ++++++++++
+Current mean reward: -3614.896949 | mean episode length: 24.000000
+val_loss=2050714.25000
+val_loss=1972208.87500
+val_loss=1658997.75000
+val_loss=1982685.87500
+val_loss=1782248.12500
+val_loss=1933657.50000
+val_loss=1804701.87500
+val_loss=1784288.37500
+val_loss=2083821.12500
+val_loss=1994021.12500
+surrogate=-0.00167, entropy=45.72133, loss=-0.45888
+surrogate=-0.00349, entropy=45.71650, loss=-0.46066
+surrogate= 0.00803, entropy=45.71161, loss=-0.44909
+surrogate= 0.02488, entropy=45.70804, loss=-0.43220
+surrogate= 0.01269, entropy=45.70399, loss=-0.44435
+surrogate=-0.02367, entropy=45.69985, loss=-0.48067
+surrogate=-0.01143, entropy=45.69572, loss=-0.46839
+surrogate=-0.00387, entropy=45.69154, loss=-0.46079
+surrogate= 0.00813, entropy=45.68719, loss=-0.44874
+surrogate=-0.00323, entropy=45.68356, loss=-0.46006
+std_min= 0.83482, std_max= 1.14364, std_mean= 1.01114
+val lr: [2.777777777777779e-05], policy lr: [3.333333333333335e-05]
+Traning Time elapsed (s): 11.97801685333252
+Policy Loss: -0.46006, | Entropy Bonus: -0.45684, | Value Loss: 1.994e+06
+Time elapsed (s): 260.84263372421265
+Agent stdevs: 1.0111419
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3616.352900 | mean episode length: 24.000000
+Current mean reward: -3652.373264 | mean episode length: 24.000000
+val_loss=1651167.87500
+val_loss=1841744.00000
+val_loss=1898918.00000
+val_loss=2287470.00000
+val_loss=1765009.87500
+val_loss=1718312.75000
+val_loss=1694827.87500
+val_loss=1949500.37500
+val_loss=2101682.00000
+val_loss=1869037.75000
+val_loss=2374569.50000
+val_loss=1998885.75000
+val_loss=2005502.37500
+val_loss=2039387.50000
+val_loss=2003149.00000
+val_loss=1903406.75000
+val_loss=2150507.25000
+val_loss=1671714.00000
+val_loss=1754849.25000
+val_loss=2005421.37500
+surrogate= 0.36474, entropy=12178.06348, loss= 0.36474
+surrogate= 0.36152, entropy=12177.99414, loss= 0.36152
+surrogate= 0.36225, entropy=12177.99219, loss= 0.36225
+surrogate= 0.36915, entropy=12177.99219, loss= 0.36915
+surrogate= 0.36330, entropy=12177.99219, loss= 0.36330
+surrogate= 0.36559, entropy=12177.99219, loss= 0.36559
+surrogate= 0.36937, entropy=12177.99219, loss= 0.36937
+surrogate= 0.34986, entropy=12177.99219, loss= 0.34986
+surrogate= 0.37045, entropy=12177.99219, loss= 0.37045
+surrogate= 0.37557, entropy=12177.99219, loss= 0.37557
+std_min= 0.81775, std_max= 1.23257, std_mean= 1.00337
+val lr: [3.333333333333335e-06], policy lr: [0.0003333333333333335]
+Traning Time elapsed (s): 17.0773983001709
+Policy Loss: 0.37557, | Entropy Bonus: -0, | Value Loss: 1.869e+06
+Time elapsed (s): 486.56076860427856
+Agent stdevs: 1.0033734
+--------------------------------------------------------------------------------
+
+Iteration 2, step 8
+Saving checkpoints to /home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/protected_8500Node_ppo/agents/eeff59ac-2eb5-45b9-a22b-2d933d3b525d with reward -3632.9
+++++++++ Policy training ++++++++++
+Current mean reward: -3607.719117 | mean episode length: 24.000000
+val_loss=1887641.25000
+val_loss=2033762.62500
+val_loss=1917871.62500
+val_loss=1920401.50000
+val_loss=1681545.87500
+val_loss=1917180.75000
+val_loss=1834857.62500
+val_loss=2010736.62500
+val_loss=1872953.87500
+val_loss=1694462.87500
+surrogate=-0.00193, entropy=45.68255, loss=-0.45876
+surrogate=-0.00351, entropy=45.68182, loss=-0.46033
+surrogate=-0.00203, entropy=45.68192, loss=-0.45885
+surrogate=-0.00184, entropy=45.68117, loss=-0.45865
+surrogate= 0.00011, entropy=45.68088, loss=-0.45670
+surrogate= 0.00587, entropy=45.68070, loss=-0.45094
+surrogate=-0.02585, entropy=45.68135, loss=-0.48266
+surrogate= 0.00787, entropy=45.68046, loss=-0.44893
+surrogate=-0.00354, entropy=45.68080, loss=-0.46035
+surrogate=-0.01663, entropy=45.68064, loss=-0.47343
+std_min= 0.83271, std_max= 1.14526, std_mean= 1.01108
+val lr: [0.0], policy lr: [0.0]
+Traning Time elapsed (s): 10.530618906021118
+Policy Loss: -0.47343, | Entropy Bonus: -0.45681, | Value Loss: 1.6945e+06
+Time elapsed (s): 246.26976037025452
+Agent stdevs: 1.011084
+--------------------------------------------------------------------------------
+++++++++ Adversary training ++++++++++
+Current mean reward: -3605.187028 | mean episode length: 24.000000
+Current mean reward: -3685.332262 | mean episode length: 24.000000
+val_loss=1812461.87500
+val_loss=1941512.12500
+val_loss=2061738.25000
+val_loss=2085295.87500
+val_loss=1974646.50000
+val_loss=1869256.87500
+val_loss=1711413.25000
+val_loss=2149399.25000
+val_loss=1828266.25000
+val_loss=1744174.12500
+val_loss=2062559.87500
+val_loss=1955463.25000
+val_loss=1786977.12500
+val_loss=1749330.00000
+val_loss=1683517.50000
+val_loss=1869019.37500
+val_loss=1989793.12500
+val_loss=1941714.37500
+val_loss=1807305.25000
+val_loss=2060481.37500
+surrogate= 0.36582, entropy=12180.00391, loss= 0.36582
+surrogate= 0.36322, entropy=12180.09082, loss= 0.36322
+surrogate= 0.36990, entropy=12180.09375, loss= 0.36990
+surrogate= 0.36462, entropy=12180.09375, loss= 0.36462
+surrogate= 0.35813, entropy=12180.09375, loss= 0.35813
+surrogate= 0.36122, entropy=12180.09375, loss= 0.36122
+surrogate= 0.36527, entropy=12180.09375, loss= 0.36527
+surrogate= 0.36283, entropy=12180.09375, loss= 0.36283
+surrogate= 0.37073, entropy=12180.09375, loss= 0.37073
+surrogate= 0.36148, entropy=12180.09375, loss= 0.36148
+std_min= 0.81971, std_max= 1.22688, std_mean= 1.00363
+val lr: [0.0], policy lr: [0.0]
+Traning Time elapsed (s): 15.267589807510376
+Policy Loss: 0.36148, | Entropy Bonus: -0, | Value Loss: 1.7442e+06
+Time elapsed (s): 477.5579867362976
+Agent stdevs: 1.003629
+--------------------------------------------------------------------------------
+
+Models saved to /home/ubuntu/hyq_workspace/rs_rl/PROTECTED_PG/protected_8500Node_ppo/agents/eeff59ac-2eb5-45b9-a22b-2d933d3b525d
